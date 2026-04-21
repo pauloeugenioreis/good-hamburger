@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Http.Json;
 using FluentAssertions;
 using GoodHamburger.Domain.Dtos;
+using GoodHamburger.Domain.Entities;
 using Xunit;
 
 namespace GoodHamburger.Integration.Tests.Controllers;
@@ -221,7 +222,7 @@ public class OrderControllerTests : IClassFixture<WebApplicationFactoryFixture>
         response.StatusCode.Should().Be(HttpStatusCode.OK);
         var payload = await response.Content.ReadFromJsonAsync<OrderResponseDto>();
         payload.Should().NotBeNull();
-        payload!.Status.Should().Be("Cancelled");
+        payload!.Status.Should().Be(OrderStatus.Cancelled);
     }
 
     [Fact]

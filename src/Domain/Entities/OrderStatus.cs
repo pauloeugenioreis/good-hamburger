@@ -23,8 +23,7 @@ public static class OrderStatus
         Cancelled
     };
 
-    private static readonly IReadOnlyDictionary<string, string> _lookup = _allowedStatuses
-        .ToDictionary(status => status.ToUpperInvariant(), status => status);
+    private static readonly IReadOnlyDictionary<string, string> _lookup = BuildLookup();
 
     /// <summary>
     /// Gets the full set of supported statuses in their canonical format.
@@ -51,5 +50,22 @@ public static class OrderStatus
         }
 
         return false;
+    }
+
+    private static IReadOnlyDictionary<string, string> BuildLookup()
+    {
+        var lookup = _allowedStatuses.ToDictionary(
+            status => status.ToUpperInvariant(),
+            status => status);
+
+        // Backward-compatible aliases accepted by older clients/tests.
+        lookup["PENDING"] = Pending;
+        lookup["PROCESSING"] = Processing;
+        lookup["SHIPPED"] = Shipped;
+        lookup["DELIVERED"] = Delivered;
+        lookup["CANCELLED"] = Cancelled;
+        lookup["CANCELED"] = Cancelled;
+
+        return lookup;
     }
 }

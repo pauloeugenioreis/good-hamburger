@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.OutputCaching;
 using MiniExcelLibs;
 using MiniExcelLibs.OpenXml;
 using GoodHamburger.Domain.Dtos;
+using GoodHamburger.Domain.Entities;
 using GoodHamburger.Domain.Interfaces;
 
 namespace GoodHamburger.Api.Controllers;
@@ -137,7 +138,7 @@ public class OrderController : ApiControllerBase
         [FromBody] string? reason,
         CancellationToken cancellationToken)
     {
-        var dto = new UpdateOrderStatusDto("Cancelled", reason ?? "Cancelled by user");
+        var dto = new UpdateOrderStatusDto(OrderStatus.Cancelled, reason ?? "Cancelled by user");
         var order = await _orderService.UpdateOrderStatusAsync(id, dto, cancellationToken);
 
         _logger.LogInformation("Order {OrderNumber} cancelled", order.OrderNumber);

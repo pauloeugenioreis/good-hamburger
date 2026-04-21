@@ -38,6 +38,10 @@ public class OrderServiceDiscountTests
             .ReturnsAsync(new FakeRepositoryTransaction());
 
         _orderRepositoryMock
+            .Setup(r => r.ExecuteAsync(It.IsAny<Func<Task<OrderResponseDto>>>(), It.IsAny<CancellationToken>()))
+            .Returns((Func<Task<OrderResponseDto>> operation, CancellationToken _) => operation());
+
+        _orderRepositoryMock
             .Setup(r => r.AddAsync(It.IsAny<Order>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync((Order order, CancellationToken _) =>
             {

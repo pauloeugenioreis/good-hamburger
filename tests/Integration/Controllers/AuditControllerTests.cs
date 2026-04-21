@@ -37,10 +37,10 @@ public class AuditControllerTests : IClassFixture<WebApplicationFactoryFixture>
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
 
-        var events = await response.Content.ReadFromJsonAsync<List<DomainEvent>>();
-        events.Should().NotBeNull();
-        events!.Count.Should().BeGreaterThan(1, "create + update events must exist");
-        events.Select(e => e.EventType).Should().Contain(new[] { "OrderCreatedEvent", "OrderUpdatedEvent" });
+        var payload = await response.Content.ReadFromJsonAsync<PagedResponse<DomainEvent>>();
+        payload.Should().NotBeNull();
+        payload!.Items.Should().HaveCountGreaterThan(1, "create + update events must exist");
+        payload.Items.Select(e => e.EventType).Should().Contain(new[] { "OrderCreatedEvent", "OrderUpdatedEvent" });
     }
 
     [Fact]
@@ -52,7 +52,7 @@ public class AuditControllerTests : IClassFixture<WebApplicationFactoryFixture>
         var cutoff = DateTime.UtcNow;
 
         await Task.Delay(TimeSpan.FromMilliseconds(10));
-        await UpdateOrderStatusAsync(order.Id, "Processing");
+        await UpdateOrderStatusAsync(order.Id, OrderStatus.Processing);
 
         // Act
         var response = await _client.GetAsync($"/api/v1/Audit/Order/{order.Id}/at/{Uri.EscapeDataString(cutoff.ToString("O"))}");
@@ -110,14 +110,14 @@ public class AuditControllerTests : IClassFixture<WebApplicationFactoryFixture>
         await SeedOrderLifecycleAsync(additionalUpdates: 1);
 
         // Act
-        var response = await _client.GetAsync("/api/v1/Audit/type/Order?limit=50");
+        var response = await _client.GetAsync("/api/v1/Audit/Order?limit=50");
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
-        var events = await response.Content.ReadFromJsonAsync<List<DomainEvent>>();
-        events.Should().NotBeNull();
-        events!.Should().NotBeEmpty();
-        events.Should().OnlyContain(e => e.AggregateType == "Order");
+        var payload = await response.Content.ReadFromJsonAsync<PagedResponse<DomainEvent>>();
+        payload.Should().NotBeNull();
+        payload!.Items.Should().NotBeEmpty();
+        payload.Items.Should().OnlyContain(e => e.AggregateType == "Order");
     }
 
     [Fact]
@@ -160,7 +160,7 @@ public class AuditControllerTests : IClassFixture<WebApplicationFactoryFixture>
         var product = await CreateProductAsync();
         var order = await CreateOrderAsync(product.Id);
 
-        var statuses = new[] { "Processing", "Shipped", "Delivered" };
+        var statuses = new[] { OrderStatus.Processing, OrderStatus.Shipped, OrderStatus.Delivered };
         for (var i = 0; i < additionalUpdates && i < statuses.Length; i++)
         {
             await UpdateOrderStatusAsync(order.Id, statuses[i]);
