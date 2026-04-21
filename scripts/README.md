@@ -57,8 +57,6 @@ chmod +x scripts/run-sonar-analysis.sh
 - .NET 10 SDK instalado
 - Projeto configurado no SonarCloud
 
-**📖 Para configuração completa**, veja [docs/SONARCLOUD.md](../docs/SONARCLOUD.md)
-
 ---
 
 ## ☸️ Kubernetes (Minikube)
@@ -154,11 +152,3 @@ Certifique-se que o Docker Desktop está instalado e rodando:
 docker --version
 docker-compose --version
 ```
-
----
-
-## 📚 Documentação Completa
-
-Para deploy em Kubernetes:
-
-- [docs/KUBERNETES.md](../docs/KUBERNETES.md) - Guia de deploy K8s
