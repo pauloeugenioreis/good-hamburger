@@ -19,8 +19,8 @@ public sealed class AuditClient : BaseApiClient, IAuditClient
     public Task<ApiResult<PagedResponse<JsonElement>>> GetAuditHistoryAsync(
         string entityType,
         string? entityId = null,
-        int? limit = 100,
-        int? offset = 0,
+        int? page = null,
+        int? pageSize = null,
         CancellationToken cancellationToken = default)
     {
         var path = string.IsNullOrWhiteSpace(entityId)
@@ -29,8 +29,8 @@ public sealed class AuditClient : BaseApiClient, IAuditClient
 
         path = BuildPath(path, new Dictionary<string, string?>
         {
-            ["limit"] = limit?.ToString(CultureInfo.InvariantCulture),
-            ["offset"] = offset?.ToString(CultureInfo.InvariantCulture)
+            ["page"] = page?.ToString(CultureInfo.InvariantCulture),
+            ["pageSize"] = pageSize?.ToString(CultureInfo.InvariantCulture)
         });
 
         return SendAsync<PagedResponse<JsonElement>>(HttpMethod.Get, path, null, cancellationToken);

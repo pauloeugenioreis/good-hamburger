@@ -11,8 +11,8 @@ public interface IAuditClient
     Task<ApiResult<PagedResponse<JsonElement>>> GetAuditHistoryAsync(
         string entityType,
         string? entityId = null,
-        int? limit = 100,
-        int? offset = 0,
+        int? page = null,
+        int? pageSize = null,
         CancellationToken cancellationToken = default);
 
     Task<ApiResult<JsonElement>> ReplayAuditAsync(string entityType, string entityId, CancellationToken cancellationToken = default);

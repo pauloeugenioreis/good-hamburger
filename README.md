@@ -31,16 +31,44 @@ docker compose up --build
 
 # Execuções seguintes
 docker compose up
+
+# Subir apenas os bancos
+docker compose up -d sqlserver postgres-events
+
+# Parar apenas os bancos
+docker compose stop sqlserver postgres-events
+
+# Remover bancos totalmente (containers + volumes) para subir do zero
+docker compose down -v
+docker compose up -d sqlserver postgres-events
+```
+
+### Execução manual (sem Docker para API e Web)
+
+Use dois terminais na raiz do projeto.
+
+```bash
+# Terminal 1 - API
+dotnet run --project src/Api/Api.csproj
+
+# Terminal 2 - Web
+dotnet run --project src/Web/Web.csproj
+```
+
+Se necessário, rode antes:
+
+```bash
+dotnet restore GoodHamburger.sln
 ```
 
 ### Endpoints
 
-| Serviço | URL |
+|Serviço|URL|
 |---|---|
-| API + Swagger | http://localhost:3060/swagger |
-| Web (Blazor) | http://localhost:5001 |
-| SQL Server | localhost:1433 |
-| PostgreSQL (Event Store) | localhost:5432 |
+|API + Swagger|http://localhost:3060/swagger|
+|Web (Blazor)|http://localhost:5001|
+|SQL Server|localhost:1433|
+|PostgreSQL (Event Store)|localhost:5432|
 
 ---
 
@@ -50,27 +78,27 @@ docker compose up
 
 O projeto segue Clean Architecture com camadas bem definidas:
 
-```
+```text
 Api → Infrastructure → Application → Data → Domain
 ```
 
-| Camada | Responsabilidade |
+|Camada|Responsabilidade|
 |---|---|
-| **Domain** | Entidades, interfaces de domínio, regras de negócio puras, eventos |
-| **Data** | DbContext (EF Core), repositórios, migrations, seeders |
-| **Application** | Serviços de aplicação, casos de uso, DTOs |
-| **Infrastructure** | Extensions de DI, middleware, cache, event sourcing, configurações |
-| **Api** | Controllers, filtros, Program.cs |
-| **Web** | Frontend Blazor Server, consumo da API via HttpClient |
+|**Domain**|Entidades, interfaces de domínio, regras de negócio puras, eventos|
+|**Data**|DbContext (EF Core), repositórios, migrations, seeders|
+|**Application**|Serviços de aplicação, casos de uso, DTOs|
+|**Infrastructure**|Extensions de DI, middleware, cache, event sourcing, configurações|
+|**Api**|Controllers, filtros, Program.cs|
+|**Web**|Frontend Blazor Server, consumo da API via HttpClient|
 
 ---
 
 ### Bancos de dados
 
-| Banco | Uso |
+|Banco|Uso|
 |---|---|
-| **SQL Server 2022** | Dados transacionais (Produtos, Pedidos) via Entity Framework Core |
-| **PostgreSQL 17** | Event Store via [Marten](https://martendb.io/) para auditoria e Event Sourcing |
+|**SQL Server 2022**|Dados transacionais (Produtos, Pedidos) via Entity Framework Core|
+|**PostgreSQL 17**|Event Store via [Marten](https://martendb.io/) para auditoria e Event Sourcing|
 
 ---
 
@@ -92,16 +120,16 @@ Api → Infrastructure → Application → Data → Domain
 
 ### Dockerfiles
 
-| Arquivo | Serviço |
+|Arquivo|Serviço|
 |---|---|
-| `Dockerfile.api` | Build multi-stage da API (.NET 10) |
-| `Dockerfile.web` | Build multi-stage do Blazor Server (.NET 10) |
+|`src/Api/Dockerfile`|Build multi-stage da API (.NET 10)|
+|`src/Web/Dockerfile`|Build multi-stage do Blazor Server (.NET 10)|
 
 ---
 
 ### Estrutura de pastas
 
-```
+```text
 src/
 ├── Api/            # Controllers, Program.cs, appsettings
 ├── Application/    # Serviços de aplicação

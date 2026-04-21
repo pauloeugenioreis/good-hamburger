@@ -28,38 +28,40 @@ public class AuditController : ApiControllerBase
     /// Get history of events for an entity type (paginated)
     /// </summary>
     [HttpGet("{entityType}")]
+    [ProducesResponseType(typeof(IEnumerable<DomainEvent>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(PagedResponse<DomainEvent>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetEntitiesHistory(
         string entityType,
-        [FromQuery] int? limit = 100,
-        [FromQuery] int? offset = 0,
+        [FromQuery] int? page,
+        [FromQuery] int? pageSize,
         CancellationToken cancellationToken = default)
     {
-        return await GetHistoryInternal(entityType, null, limit, offset, cancellationToken);
+        return await GetHistoryInternal(entityType, null, page, pageSize, cancellationToken);
     }
 
     /// <summary>
     /// Get history of events for a specific entity instance (paginated)
     /// </summary>
     [HttpGet("{entityType}/{entityId}")]
+    [ProducesResponseType(typeof(IEnumerable<DomainEvent>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(PagedResponse<DomainEvent>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetEntityHistory(
         string entityType,
         string entityId,
-        [FromQuery] int? limit = 100,
-        [FromQuery] int? offset = 0,
+        [FromQuery] int? page,
+        [FromQuery] int? pageSize,
         CancellationToken cancellationToken = default)
     {
-        return await GetHistoryInternal(entityType, entityId, limit, offset, cancellationToken);
+        return await GetHistoryInternal(entityType, entityId, page, pageSize, cancellationToken);
     }
 
     private async Task<IActionResult> GetHistoryInternal(
         string entityType,
         string? entityId,
-        int? limit,
-        int? offset,
+        int? page,
+        int? pageSize,
         CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(entityType))
@@ -72,9 +74,19 @@ public class AuditController : ApiControllerBase
             return BadRequest(EventSourcingDisabledMessage);
         }
 
-        int pageSize = limit ?? 100;
-        int currentOffset = offset ?? 0;
-        int page = (currentOffset / pageSize) + 1;
+        var usePagination = page.HasValue && pageSize.HasValue;
+        int? limit = null;
+        int? offset = null;
+
+        if (usePagination)
+        {
+            var safePage = Math.Max(1, page!.Value);
+            var safePageSize = Math.Max(1, pageSize!.Value);
+            limit = safePageSize;
+            offset = (safePage - 1) * safePageSize;
+            page = safePage;
+            pageSize = safePageSize;
+        }
 
         List<DomainEvent> items;
         long total;
@@ -82,15 +94,28 @@ public class AuditController : ApiControllerBase
         if (string.IsNullOrWhiteSpace(entityId))
         {
             (items, total) = await _eventStore.GetEventsByTypeAsync(
-                entityType, null, null, pageSize, currentOffset, cancellationToken);
+                entityType, null, null, limit, offset, cancellationToken);
         }
         else
         {
-            (items, total) = await _eventStore.GetEventsPagedAsync(
-                entityType, entityId, pageSize, currentOffset, cancellationToken);
+            if (usePagination)
+            {
+                (items, total) = await _eventStore.GetEventsPagedAsync(
+                    entityType, entityId, limit, offset, cancellationToken);
+            }
+            else
+            {
+                items = await _eventStore.GetEventsAsync(entityType, entityId, cancellationToken);
+                total = items.Count;
+            }
         }
 
-        return HandlePagedResult(items, total, page, pageSize);
+        if (usePagination)
+        {
+            return HandlePagedResult(items, total, page!.Value, pageSize!.Value);
+        }
+
+        return Ok(items);
     }
 
     /// <summary>

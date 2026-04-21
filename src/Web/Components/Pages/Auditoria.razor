@@ -9,7 +9,7 @@
     <div>
         <p class="eyebrow">Auditoria</p>
         <h1>Event sourcing</h1>
-        <p class="lead">Consulte histórico, replay e estatísticas expostos pela API pública de auditoria.</p>
+        <p class="lead">Consulte histórico de auditoria e estatísticas.</p>
     </div>
     <button class="secondary-button" type="button" @onclick="LoadStatisticsAsync" disabled="@isLoading">Estatísticas</button>
 </section>
@@ -175,11 +175,13 @@
         isLoading = true;
         errorMessage = null;
         hasStatistics = false;
-        
-        currentPage = page;
-        var offset = (currentPage - 1) * pageSize;
 
-        var result = await ApiClient.GetAuditHistoryAsync(entityType, string.IsNullOrWhiteSpace(entityId) ? null : entityId.Trim(), pageSize, offset);
+        currentPage = page;
+        var result = await ApiClient.GetAuditHistoryAsync(
+            entityType,
+            string.IsNullOrWhiteSpace(entityId) ? null : entityId.Trim(),
+            currentPage,
+            pageSize);
 
         if (result.IsSuccess && result.Value is not null)
         {

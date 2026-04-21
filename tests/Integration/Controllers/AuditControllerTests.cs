@@ -32,7 +32,7 @@ public class AuditControllerTests : IClassFixture<WebApplicationFactoryFixture>
         var orderId = await SeedOrderLifecycleAsync(additionalUpdates: 1);
 
         // Act
-        var response = await _client.GetAsync($"/api/v1/Audit/Order/{orderId}");
+        var response = await _client.GetAsync($"/api/v1/Audit/Order/{orderId}?page=1&pageSize=100");
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -110,7 +110,7 @@ public class AuditControllerTests : IClassFixture<WebApplicationFactoryFixture>
         await SeedOrderLifecycleAsync(additionalUpdates: 1);
 
         // Act
-        var response = await _client.GetAsync("/api/v1/Audit/Order?limit=50");
+        var response = await _client.GetAsync("/api/v1/Audit/Order?page=1&pageSize=50");
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
