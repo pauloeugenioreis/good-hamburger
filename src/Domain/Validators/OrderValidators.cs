@@ -14,11 +14,11 @@ public class CreateOrderValidator : AbstractValidator<CreateOrderRequest>
         RuleFor(x => x.CustomerName)
             .NotEmpty().WithMessage("O nome do cliente é obrigatório")
             .MaximumLength(200).WithMessage("O nome do cliente não pode exceder 200 caracteres");
-
+        /*
         RuleFor(x => x.CustomerEmail)
             .NotEmpty().WithMessage("O e-mail é obrigatório")
             .EmailAddress().WithMessage("Formato de e-mail inválido");
-        /*
+
         RuleFor(x => x.ShippingAddress)
             .NotEmpty().WithMessage("O endereço de entrega é obrigatório")
             .MaximumLength(500).WithMessage("O endereço de entrega não pode exceder 500 caracteres");
