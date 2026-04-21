@@ -1,0 +1,68 @@
+{
+  "name": "dotnet-enterprise-template",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.devcontainer.yml"
+  ],
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "runServices": [
+    "devcontainer",
+    "sqlserver",
+    "postgres",
+    "postgres-events",
+    "mysql",
+    "oracle",
+    "jaeger",
+    "prometheus",
+    "grafana"
+  ],
+  "shutdownAction": "stopCompose",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "remoteEnv": {
+    "ASPNETCORE_ENVIRONMENT": "Development"
+  },
+  "postCreateCommand": "dotnet restore && dotnet tool restore",
+  "forwardPorts": [
+    5000,
+    5001,
+    1433,
+    1521,
+    3306,
+    5432,
+    5433,
+    16686,
+    4317,
+    9090,
+    3000
+  ],
+  "portsAttributes": {
+    "5001": { "label": "API HTTPS" },
+    "5000": { "label": "API HTTP" },
+    "16686": { "label": "Jaeger UI" },
+    "9090": { "label": "Prometheus" },
+    "3000": { "label": "Grafana" }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dotnet.defaultSolution": "GoodHamburger.sln",
+        "editor.formatOnSave": true,
+        "csharp.inlayHints.parameters.enabled": "none"
+      },
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.azure-dev",
+        "DavidAnson.vscode-markdownlint"
+      ]
+    }
+  }
+}

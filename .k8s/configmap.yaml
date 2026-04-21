@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: GoodHamburger-api-config
+  namespace: GoodHamburger
+data:
+  # Logging Configuration
+  Logging__LogLevel__Default: "Information"
+  Logging__LogLevel__Microsoft: "Warning"
+  Logging__LogLevel__Microsoft.AspNetCore: "Warning"
+  Logging__LogLevel__Microsoft.EntityFrameworkCore: "Warning"
+
+  # Application Settings
+  AppSettings__EnvironmentName: "Production"
+
+  # Database Configuration
+  AppSettings__Infrastructure__Database__DatabaseType: "SqlServer"
+  AppSettings__Infrastructure__Database__ConnectionString: "Server=database-service;Database=GoodHamburger;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;"
+  AppSettings__Infrastructure__Database__CommandTimeout: "30"
+  AppSettings__Infrastructure__Database__EnableSensitiveDataLogging: "false"
+
+  # Cache Configuration
+  AppSettings__Infrastructure__Cache__Enabled: "true"
+  AppSettings__Infrastructure__Cache__Provider: "Redis"
+  AppSettings__Infrastructure__Cache__ConnectionString: "redis-service:6379"
+  AppSettings__Infrastructure__Cache__DefaultExpirationMinutes: "60"
+
+  # Database Settings
+  AppSettings__Infrastructure__Database__Provider: "EntityFramework"
+
+  # Authentication Settings (Update with your values)
+  AppSettings__Authentication__Jwt__Secret: "your-secret-key-min-32-characters-long"
+  AppSettings__Authentication__Jwt__Issuer: "GoodHamburger"
+  AppSettings__Authentication__Jwt__Audience: "GoodHamburger"
+  AppSettings__Authentication__Jwt__ExpirationMinutes: "60"

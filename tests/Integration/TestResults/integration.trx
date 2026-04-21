@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="cb8ea8f3-958a-436a-81cb-defa78649c16" name="Paulo@DESKTOP-RPR17NI 2026-04-20 12:14:22" runUser="DESKTOP-RPR17NI\Paulo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-04-20T12:14:22.9300737-04:00" queuing="2026-04-20T12:14:22.9300738-04:00" start="2026-04-20T12:14:20.7047112-04:00" finish="2026-04-20T12:14:23.6240026-04:00" />
+  <TestSettings name="default" id="b79025b1-8aa2-4251-b5d1-933d01d56762">
+    <Deployment runDeploymentRoot="Paulo_DESKTOP-RPR17NI_2026-04-20_12_14_22" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="fd9588f9-b8b5-427e-9200-72db158b8d39" testId="67086fe1-5c25-29d8-5c02-722dd84a70b6" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetById_ExistingOrder_ReturnsOrder" computerName="DESKTOP-RPR17NI" duration="00:00:00.0046430" startTime="2026-04-20T12:14:23.5205763-04:00" endTime="2026-04-20T12:14:23.5252454-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd9588f9-b8b5-427e-9200-72db158b8d39" />
+    <UnitTestResult executionId="215b867e-dadc-4a35-ac06-d2416a5556b4" testId="83075047-f4eb-8031-9f3b-7a35d91f6c53" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetById_ExistingReview_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.0559944" startTime="2026-04-20T12:14:23.1335781-04:00" endTime="2026-04-20T12:14:23.1896190-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="215b867e-dadc-4a35-ac06-d2416a5556b4" />
+    <UnitTestResult executionId="9de18d19-a00e-4827-88db-0a500a0c3f63" testId="28394b36-42da-9186-7899-35af75c2bb42" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.CancelOrder_ExistingOrder_ReturnsCancelledOrder" computerName="DESKTOP-RPR17NI" duration="00:00:00.0454331" startTime="2026-04-20T12:14:23.3439932-04:00" endTime="2026-04-20T12:14:23.3894705-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9de18d19-a00e-4827-88db-0a500a0c3f63" />
+    <UnitTestResult executionId="f80ad86f-c5ba-491f-b31b-63f407748575" testId="71729b33-f74d-f434-e8b7-a74f5c0cd63c" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.RefreshToken_ValidPayload_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.0439514" startTime="2026-04-20T12:14:23.0906590-04:00" endTime="2026-04-20T12:14:23.1346413-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f80ad86f-c5ba-491f-b31b-63f407748575" />
+    <UnitTestResult executionId="bdef574b-0e79-446d-b28d-648bbc4b11fe" testId="deab5987-b08c-9af9-08d9-7c9026fc0de2" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Update_ExistingReview_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.0764758" startTime="2026-04-20T12:14:22.8690310-04:00" endTime="2026-04-20T12:14:22.9455455-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bdef574b-0e79-446d-b28d-648bbc4b11fe" />
+    <UnitTestResult executionId="5992f22b-a416-40b0-8bed-fce918c135c3" testId="a4568453-8c66-7330-0bc2-4591d7fc83d8" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.OAuth2Login_ValidPayload_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.0490561" startTime="2026-04-20T12:14:23.1348765-04:00" endTime="2026-04-20T12:14:23.1839676-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5992f22b-a416-40b0-8bed-fce918c135c3" />
+    <UnitTestResult executionId="9bb1cd69-1e64-4683-a5ab-90ff5a2f5ef0" testId="6d5dfb20-1812-11b8-0b4c-946b8feeee80" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEntityHistory_ReturnsAllRecordedEvents" computerName="DESKTOP-RPR17NI" duration="00:00:00.0060897" startTime="2026-04-20T12:14:23.2594373-04:00" endTime="2026-04-20T12:14:23.2659495-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bb1cd69-1e64-4683-a5ab-90ff5a2f5ef0">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 161&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEntityHistory_ReturnsAllRecordedEvents() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 32&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b2138172-4eca-4514-b36d-f32563b11aa5" testId="7248b706-aa16-2e3e-cf3a-8884b4de7c04" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.Update_ExistingProduct_ReturnsSuccess" computerName="DESKTOP-RPR17NI" duration="00:00:00.0157150" startTime="2026-04-20T12:14:23.3387463-04:00" endTime="2026-04-20T12:14:23.3545012-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b2138172-4eca-4514-b36d-f32563b11aa5" />
+    <UnitTestResult executionId="112eb5d6-1127-45f8-bf40-e4fa7ad88717" testId="750e9c14-a9bf-1c5d-8f50-bcab841fe08a" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.TimeTravel_ReturnsStateUpToCutoffTimestamp" computerName="DESKTOP-RPR17NI" duration="00:00:00.0404855" startTime="2026-04-20T12:14:23.1892774-04:00" endTime="2026-04-20T12:14:23.2300969-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="112eb5d6-1127-45f8-bf40-e4fa7ad88717">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.TimeTravel_ReturnsStateUpToCutoffTimestamp() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 51&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0ed62cae-d063-46b1-aa45-d25b4c7c8692" testId="82a0dc64-faaa-8f8c-1ecb-10a69aa584a6" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.UpdateStock_ExistingProduct_ReturnsUpdatedProduct" computerName="DESKTOP-RPR17NI" duration="00:00:00.0124145" startTime="2026-04-20T12:14:23.3620067-04:00" endTime="2026-04-20T12:14:23.3744557-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ed62cae-d063-46b1-aa45-d25b4c7c8692" />
+    <UnitTestResult executionId="6f10795f-8e1e-4f24-ac12-0c8739f68163" testId="b767ef6f-e17b-e710-f599-ee88d0961133" testName="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests.Download_ExistingFile_ReturnsFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.0646026" startTime="2026-04-20T12:14:22.8475744-04:00" endTime="2026-04-20T12:14:22.9122326-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f10795f-8e1e-4f24-ac12-0c8739f68163" />
+    <UnitTestResult executionId="1544c685-83c4-4ad1-b8c4-80af4da00ae4" testId="9d993f34-1c7a-8035-b2ed-8c474c4106f1" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Delete_ExistingReview_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.1213862" startTime="2026-04-20T12:14:22.7473098-04:00" endTime="2026-04-20T12:14:22.8687353-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1544c685-83c4-4ad1-b8c4-80af4da00ae4" />
+    <UnitTestResult executionId="951cff72-cd86-47b5-8985-739e72019860" testId="5ee845c9-53fd-da9a-02f7-f26a9c986673" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetAll_WithPagination_ReturnsPagedResponse" computerName="DESKTOP-RPR17NI" duration="00:00:00.9043050" startTime="2026-04-20T12:14:21.8243943-04:00" endTime="2026-04-20T12:14:22.7381186-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="951cff72-cd86-47b5-8985-739e72019860" />
+    <UnitTestResult executionId="0063b8b6-47ee-413d-b1d9-f26dd7d6fc8a" testId="c9e3f8e5-b9e5-c78d-d8a6-62773de8f26e" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetStatistics_ReturnsAggregatedMetrics" computerName="DESKTOP-RPR17NI" duration="00:00:01.3390117" startTime="2026-04-20T12:14:21.8244145-04:00" endTime="2026-04-20T12:14:23.1774289-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0063b8b6-47ee-413d-b1d9-f26dd7d6fc8a">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 161&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetStatistics_ReturnsAggregatedMetrics() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 145&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="51b8ebb5-4ff4-430e-8394-105bd35d98ff" testId="446f0186-cf49-d3ae-5e66-21649eed8cbe" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.ChangePassword_Authorized_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.0865055" startTime="2026-04-20T12:14:22.9616834-04:00" endTime="2026-04-20T12:14:23.0482314-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="51b8ebb5-4ff4-430e-8394-105bd35d98ff" />
+    <UnitTestResult executionId="79d2ea90-0435-479a-8a34-2b7fcb41e6fa" testId="1cae2737-9357-610e-d6c4-62a4ef17e65b" testName="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests.Delete_ExistingFile_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.0999089" startTime="2026-04-20T12:14:22.7473009-04:00" endTime="2026-04-20T12:14:22.8472667-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79d2ea90-0435-479a-8a34-2b7fcb41e6fa" />
+    <UnitTestResult executionId="aca9a48e-3b07-433e-ac27-326faf062554" testId="a678c979-21f7-4641-2e2f-8b83215376d9" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.RevokeToken_ValidPayload_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.0415530" startTime="2026-04-20T12:14:23.0487417-04:00" endTime="2026-04-20T12:14:23.0903345-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aca9a48e-3b07-433e-ac27-326faf062554" />
+    <UnitTestResult executionId="5b224251-916c-45cb-8148-7992b8a7e137" testId="ff05091e-d3a7-e6b6-f0ee-f82a49cc3b07" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.0230418" startTime="2026-04-20T12:14:23.4420333-04:00" endTime="2026-04-20T12:14:23.4651174-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b224251-916c-45cb-8148-7992b8a7e137" />
+    <UnitTestResult executionId="67de429b-d0e4-460c-a361-f396e1bd956f" testId="7a5b7038-9ed3-44fa-6971-2b66a69d25e1" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.Create_ValidProduct_ReturnsCreated" computerName="DESKTOP-RPR17NI" duration="00:00:00.0024805" startTime="2026-04-20T12:14:23.3747670-04:00" endTime="2026-04-20T12:14:23.3772817-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67de429b-d0e4-460c-a361-f396e1bd956f" />
+    <UnitTestResult executionId="6e2d097c-a829-4aa5-a6f9-87e40bfe4d5e" testId="983d0cbf-b7e8-bfb2-1915-b00c271d8bb4" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetById_NonExistentReview_ReturnsNotFound" computerName="DESKTOP-RPR17NI" duration="00:00:00.0784330" startTime="2026-04-20T12:14:22.9941788-04:00" endTime="2026-04-20T12:14:23.0726565-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e2d097c-a829-4aa5-a6f9-87e40bfe4d5e" />
+    <UnitTestResult executionId="3ac40b8a-a9ea-426c-8703-2a75fee49a94" testId="d88c3b6c-86bd-bad5-ba66-8fec3fd590f3" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Approve_ExistingReview_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.0600050" startTime="2026-04-20T12:14:23.0729768-04:00" endTime="2026-04-20T12:14:23.1330538-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ac40b8a-a9ea-426c-8703-2a75fee49a94" />
+    <UnitTestResult executionId="8f654fe2-bb1a-4a50-af96-353ed458c239" testId="4babeffe-473f-ff92-0994-5b89120bcbc0" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByType_ReturnsOrderEvents" computerName="DESKTOP-RPR17NI" duration="00:00:00.0091383" startTime="2026-04-20T12:14:23.1790208-04:00" endTime="2026-04-20T12:14:23.1887457-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f654fe2-bb1a-4a50-af96-353ed458c239">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 161&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByType_ReturnsOrderEvents() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 110&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d2a7d58e-d065-49e5-a553-8c8dc04d2c99" testId="a805013e-03b7-61cb-1079-0ffc6e10026c" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_ValidOrder_ReturnsCreated" computerName="DESKTOP-RPR17NI" duration="00:00:00.0089507" startTime="2026-04-20T12:14:23.3900659-04:00" endTime="2026-04-20T12:14:23.3990609-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2a7d58e-d065-49e5-a553-8c8dc04d2c99" />
+    <UnitTestResult executionId="30b5f15c-43ce-419d-9e7f-048175502ede" testId="5b50f6cf-d2ef-9bca-4c3e-f46c70b23d5e" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.Register_ValidPayload_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.0582172" startTime="2026-04-20T12:14:22.9031048-04:00" endTime="2026-04-20T12:14:22.9613572-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30b5f15c-43ce-419d-9e7f-048175502ede" />
+    <UnitTestResult executionId="08ba602a-35a2-45f7-bc51-ef5ae78f823b" testId="b3273140-4342-fac4-da41-e07e160af92a" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.ExportToExcel_WithFilters_ReturnsFilteredExcelFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.0165311" startTime="2026-04-20T12:14:23.3777436-04:00" endTime="2026-04-20T12:14:23.3943122-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08ba602a-35a2-45f7-bc51-ef5ae78f823b" />
+    <UnitTestResult executionId="30573869-26ec-4008-996f-205af1d18bd8" testId="27696f45-df14-de87-c601-56bf02839185" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetByCustomer_ReturnsOrders" computerName="DESKTOP-RPR17NI" duration="00:00:01.4846171" startTime="2026-04-20T12:14:21.8244105-04:00" endTime="2026-04-20T12:14:23.3152835-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30573869-26ec-4008-996f-205af1d18bd8" />
+    <UnitTestResult executionId="f317066c-18be-47ac-aeb6-0fb5640ddc49" testId="c55840e9-3831-2b89-7b7d-b52eeda7bbb9" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.ReplayEvents_ReturnsOrderedTimeline" computerName="DESKTOP-RPR17NI" duration="00:00:00.0054500" startTime="2026-04-20T12:14:23.2662354-04:00" endTime="2026-04-20T12:14:23.2721347-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f317066c-18be-47ac-aeb6-0fb5640ddc49">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 161&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.ReplayEvents_ReturnsOrderedTimeline() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 74&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="41c43f00-8cb8-469c-ae1d-e7fd29eaffb7" testId="680484a5-b13b-7399-040a-7932c374f180" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.1677191" startTime="2026-04-20T12:14:23.1440870-04:00" endTime="2026-04-20T12:14:23.3119597-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="41c43f00-8cb8-469c-ae1d-e7fd29eaffb7" />
+    <UnitTestResult executionId="63f3a36e-685d-4b05-8fa6-1e9ca80ce732" testId="2f63d3e7-ccf1-b63f-ee6b-6bb52db902e3" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Create_ValidReview_ReturnsCreated" computerName="DESKTOP-RPR17NI" duration="00:00:00.0476978" startTime="2026-04-20T12:14:22.9459762-04:00" endTime="2026-04-20T12:14:22.9937156-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63f3a36e-685d-4b05-8fa6-1e9ca80ce732" />
+    <UnitTestResult executionId="6a185b29-16f7-44e9-b4bc-e0a48e2bbc47" testId="9f9ae67e-7878-4105-8bee-eec8b172f953" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.0152094" startTime="2026-04-20T12:14:23.3993716-04:00" endTime="2026-04-20T12:14:23.4146281-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a185b29-16f7-44e9-b4bc-e0a48e2bbc47" />
+    <UnitTestResult executionId="c59cf5a8-2367-4c8f-bb2f-5f1f04b16d76" testId="f56a00e1-41a3-f4f6-f7db-2670ca17c845" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.GetById_ExistingProduct_ReturnsProduct" computerName="DESKTOP-RPR17NI" duration="00:00:00.0038312" startTime="2026-04-20T12:14:23.3548266-04:00" endTime="2026-04-20T12:14:23.3586943-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c59cf5a8-2367-4c8f-bb2f-5f1f04b16d76" />
+    <UnitTestResult executionId="525cccbc-8a78-460c-98de-dd87e0c9d74b" testId="f7292d8e-d9d5-6cfe-bdbb-af6cc5d8e118" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.Delete_ExistingProduct_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:00.0174423" startTime="2026-04-20T12:14:23.3209612-04:00" endTime="2026-04-20T12:14:23.3384339-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="525cccbc-8a78-460c-98de-dd87e0c9d74b" />
+    <UnitTestResult executionId="fb3c8671-ef6b-4f49-bf44-c4e08cc71750" testId="8538249f-ebcc-7a83-7229-9f6305259c2d" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetAll_ReturnsSuccessStatusCode" computerName="DESKTOP-RPR17NI" duration="00:00:00.0281423" startTime="2026-04-20T12:14:23.3155451-04:00" endTime="2026-04-20T12:14:23.3437191-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb3c8671-ef6b-4f49-bf44-c4e08cc71750" />
+    <UnitTestResult executionId="f277f2e6-7e41-4964-9cef-6f230f3f344f" testId="9a8097f2-32a0-b0e6-1135-f47c9a374e5f" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.GetCurrentUser_Authorized_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.0908417" startTime="2026-04-20T12:14:22.7473000-04:00" endTime="2026-04-20T12:14:22.8382761-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f277f2e6-7e41-4964-9cef-6f230f3f344f" />
+    <UnitTestResult executionId="db6e9d8b-ba57-4d95-9e3d-7d468cc35cab" testId="f4cc1386-4afd-f4a8-b59d-4a11734b9cd9" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithDuplicateSandwich_ReturnsBadRequest" computerName="DESKTOP-RPR17NI" duration="00:00:00.0084081" startTime="2026-04-20T12:14:23.4160976-04:00" endTime="2026-04-20T12:14:23.4245395-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db6e9d8b-ba57-4d95-9e3d-7d468cc35cab" />
+    <UnitTestResult executionId="ddc64ea0-6904-43cc-a801-a09d16532ee6" testId="44b0a5e2-416a-6740-3a3d-ddbdd364e9ca" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.GetById_NonExistentProduct_ReturnsNotFound" computerName="DESKTOP-RPR17NI" duration="00:00:00.0027418" startTime="2026-04-20T12:14:23.3589746-04:00" endTime="2026-04-20T12:14:23.3617514-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ddc64ea0-6904-43cc-a801-a09d16532ee6" />
+    <UnitTestResult executionId="8bb07c95-e3fb-450b-a08c-b2564081c41d" testId="a39f0177-1a81-aec3-7d33-a8476cc64864" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetMenu_ReturnsGroupedMenu" computerName="DESKTOP-RPR17NI" duration="00:00:00.0262161" startTime="2026-04-20T12:14:23.4654571-04:00" endTime="2026-04-20T12:14:23.4917123-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bb07c95-e3fb-450b-a08c-b2564081c41d" />
+    <UnitTestResult executionId="14b6aa5c-2ec4-433d-9f7d-6beaf6868ede" testId="17ad3799-f61f-40fe-ae69-e2ffefb73f16" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithoutSandwich_ReturnsBadRequest" computerName="DESKTOP-RPR17NI" duration="00:00:00.0068993" startTime="2026-04-20T12:14:23.4922083-04:00" endTime="2026-04-20T12:14:23.4991439-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="14b6aa5c-2ec4-433d-9f7d-6beaf6868ede" />
+    <UnitTestResult executionId="57e5c778-443e-4fc1-a043-e2bbb8872159" testId="d75c6d43-cc3e-ce58-8401-0c6ce2a3f2ca" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetStatistics_ReturnsStatistics" computerName="DESKTOP-RPR17NI" duration="00:00:00.0167926" startTime="2026-04-20T12:14:23.4248429-04:00" endTime="2026-04-20T12:14:23.4416708-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57e5c778-443e-4fc1-a043-e2bbb8872159" />
+    <UnitTestResult executionId="4fe28bc1-666c-49e3-9403-ca51204400ea" testId="86900998-4cda-53b3-2fc3-ed50bafd5333" testName="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetAll_WithoutPagination_ReturnsArray" computerName="DESKTOP-RPR17NI" duration="00:00:00.0653294" startTime="2026-04-20T12:14:23.2203983-04:00" endTime="2026-04-20T12:14:23.2857900-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4fe28bc1-666c-49e3-9403-ca51204400ea" />
+    <UnitTestResult executionId="49c686e9-dd30-4334-8e08-6fe635976cce" testId="dfdadf08-d0e1-c473-9583-37d7ed9097fb" testName="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests.Upload_ValidFile_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.9040355" startTime="2026-04-20T12:14:21.8244081-04:00" endTime="2026-04-20T12:14:22.7381276-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49c686e9-dd30-4334-8e08-6fe635976cce" />
+    <UnitTestResult executionId="50b8a3cb-4a5f-452e-92ff-0e3a325bde0e" testId="27a190ce-7ecc-160c-2bdc-f68e81dfadb1" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.UpdateStatus_ExistingProduct_ReturnsNoContent" computerName="DESKTOP-RPR17NI" duration="00:00:01.3128239" startTime="2026-04-20T12:14:21.8243965-04:00" endTime="2026-04-20T12:14:23.1435025-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50b8a3cb-4a5f-452e-92ff-0e3a325bde0e" />
+    <UnitTestResult executionId="90d66d80-cb72-47ce-a2f8-a9110d171b1f" testId="1190c674-92a8-5c1b-b36b-a05ef8f3a1cd" testName="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.GetAll_ReturnsSuccessStatusCode" computerName="DESKTOP-RPR17NI" duration="00:00:00.0080327" startTime="2026-04-20T12:14:23.3125722-04:00" endTime="2026-04-20T12:14:23.3206392-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90d66d80-cb72-47ce-a2f8-a9110d171b1f" />
+    <UnitTestResult executionId="0f5d5106-901e-434d-9fe2-45da5140881d" testId="6c74c802-6721-a05c-ed69-1b3f159c2bde" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.Login_ValidPayload_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.0634439" startTime="2026-04-20T12:14:22.8393356-04:00" endTime="2026-04-20T12:14:22.9028211-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f5d5106-901e-434d-9fe2-45da5140881d" />
+    <UnitTestResult executionId="3a950eca-59cf-4731-854f-38d3e51175e0" testId="386911ae-a61f-1123-745d-8710f052ab7f" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByVersion_ReturnsFilteredRange" computerName="DESKTOP-RPR17NI" duration="00:00:00.0085408" startTime="2026-04-20T12:14:23.2303523-04:00" endTime="2026-04-20T12:14:23.2393389-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a950eca-59cf-4731-854f-38d3e51175e0">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 161&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByVersion_ReturnsFilteredRange() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 93&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="147be6de-01c5-44f8-ba7d-a3defb7722f0" testId="90790fff-eaf2-f7fb-d4b3-9ec24d53c433" testName="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.UpdateProfile_Authorized_ReturnsOk" computerName="DESKTOP-RPR17NI" duration="00:00:00.9041110" startTime="2026-04-20T12:14:21.8244032-04:00" endTime="2026-04-20T12:14:22.7381249-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="147be6de-01c5-44f8-ba7d-a3defb7722f0" />
+    <UnitTestResult executionId="057cc138-0348-4e2e-82e5-2393c18072b9" testId="ffddc978-7d5b-5862-55c8-8e8b31a69e92" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.UpdateStatus_ValidOrder_ReturnsSuccess" computerName="DESKTOP-RPR17NI" duration="00:00:00.0207977" startTime="2026-04-20T12:14:23.4994514-04:00" endTime="2026-04-20T12:14:23.5202843-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="057cc138-0348-4e2e-82e5-2393c18072b9" />
+    <UnitTestResult executionId="a7869f7e-b9e9-486b-86c4-d4518d07f3a9" testId="f9978680-2e52-92b6-21a8-3a6ef15a70c7" testName="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByUser_ReturnsOkPayload" computerName="DESKTOP-RPR17NI" duration="00:00:00.0182147" startTime="2026-04-20T12:14:23.2403081-04:00" endTime="2026-04-20T12:14:23.2590759-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7869f7e-b9e9-486b-86c4-d4518d07f3a9">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.</Message>
+          <StackTrace>   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 204&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 161&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByUser_ReturnsOkPayload() in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs:line 127&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByVersion_ReturnsFilteredRange" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="386911ae-a61f-1123-745d-8710f052ab7f">
+      <Execution id="3a950eca-59cf-4731-854f-38d3e51175e0" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="GetEventsByVersion_ReturnsFilteredRange" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="ff05091e-d3a7-e6b6-f0ee-f82a49cc3b07">
+      <Execution id="5b224251-916c-45cb-8148-7992b8a7e137" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.Register_ValidPayload_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="5b50f6cf-d2ef-9bca-4c3e-f46c70b23d5e">
+      <Execution id="30b5f15c-43ce-419d-9e7f-048175502ede" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="Register_ValidPayload_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="680484a5-b13b-7399-040a-7932c374f180">
+      <Execution id="41c43f00-8cb8-469c-ae1d-e7fd29eaffb7" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="ExportToExcel_WithoutFilters_ReturnsExcelFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByUser_ReturnsOkPayload" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="f9978680-2e52-92b6-21a8-3a6ef15a70c7">
+      <Execution id="a7869f7e-b9e9-486b-86c4-d4518d07f3a9" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="GetEventsByUser_ReturnsOkPayload" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.ExportToExcel_WithFilters_ReturnsFilteredExcelFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="b3273140-4342-fac4-da41-e07e160af92a">
+      <Execution id="08ba602a-35a2-45f7-bc51-ef5ae78f823b" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="ExportToExcel_WithFilters_ReturnsFilteredExcelFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetStatistics_ReturnsAggregatedMetrics" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="c9e3f8e5-b9e5-c78d-d8a6-62773de8f26e">
+      <Execution id="0063b8b6-47ee-413d-b1d9-f26dd7d6fc8a" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="GetStatistics_ReturnsAggregatedMetrics" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.UpdateStatus_ExistingProduct_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="27a190ce-7ecc-160c-2bdc-f68e81dfadb1">
+      <Execution id="50b8a3cb-4a5f-452e-92ff-0e3a325bde0e" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="UpdateStatus_ExistingProduct_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetAll_WithoutPagination_ReturnsArray" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="86900998-4cda-53b3-2fc3-ed50bafd5333">
+      <Execution id="4fe28bc1-666c-49e3-9403-ca51204400ea" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="GetAll_WithoutPagination_ReturnsArray" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.Login_ValidPayload_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="6c74c802-6721-a05c-ed69-1b3f159c2bde">
+      <Execution id="0f5d5106-901e-434d-9fe2-45da5140881d" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="Login_ValidPayload_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetByCustomer_ReturnsOrders" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="27696f45-df14-de87-c601-56bf02839185">
+      <Execution id="30573869-26ec-4008-996f-205af1d18bd8" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetByCustomer_ReturnsOrders" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.ChangePassword_Authorized_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="446f0186-cf49-d3ae-5e66-21649eed8cbe">
+      <Execution id="51b8ebb5-4ff4-430e-8394-105bd35d98ff" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="ChangePassword_Authorized_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Approve_ExistingReview_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="d88c3b6c-86bd-bad5-ba66-8fec3fd590f3">
+      <Execution id="3ac40b8a-a9ea-426c-8703-2a75fee49a94" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="Approve_ExistingReview_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.UpdateStock_ExistingProduct_ReturnsUpdatedProduct" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="82a0dc64-faaa-8f8c-1ecb-10a69aa584a6">
+      <Execution id="0ed62cae-d063-46b1-aa45-d25b4c7c8692" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="UpdateStock_ExistingProduct_ReturnsUpdatedProduct" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.UpdateStatus_ValidOrder_ReturnsSuccess" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="ffddc978-7d5b-5862-55c8-8e8b31a69e92">
+      <Execution id="057cc138-0348-4e2e-82e5-2393c18072b9" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="UpdateStatus_ValidOrder_ReturnsSuccess" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.GetById_NonExistentProduct_ReturnsNotFound" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="44b0a5e2-416a-6740-3a3d-ddbdd364e9ca">
+      <Execution id="ddc64ea0-6904-43cc-a801-a09d16532ee6" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="GetById_NonExistentProduct_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetAll_ReturnsSuccessStatusCode" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="8538249f-ebcc-7a83-7229-9f6305259c2d">
+      <Execution id="fb3c8671-ef6b-4f49-bf44-c4e08cc71750" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetAll_ReturnsSuccessStatusCode" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.CancelOrder_ExistingOrder_ReturnsCancelledOrder" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="28394b36-42da-9186-7899-35af75c2bb42">
+      <Execution id="9de18d19-a00e-4827-88db-0a500a0c3f63" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="CancelOrder_ExistingOrder_ReturnsCancelledOrder" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.Delete_ExistingProduct_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="f7292d8e-d9d5-6cfe-bdbb-af6cc5d8e118">
+      <Execution id="525cccbc-8a78-460c-98de-dd87e0c9d74b" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="Delete_ExistingProduct_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Create_ValidReview_ReturnsCreated" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="2f63d3e7-ccf1-b63f-ee6b-6bb52db902e3">
+      <Execution id="63f3a36e-685d-4b05-8fa6-1e9ca80ce732" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="Create_ValidReview_ReturnsCreated" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Delete_ExistingReview_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="9d993f34-1c7a-8035-b2ed-8c474c4106f1">
+      <Execution id="1544c685-83c4-4ad1-b8c4-80af4da00ae4" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="Delete_ExistingReview_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.GetCurrentUser_Authorized_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="9a8097f2-32a0-b0e6-1135-f47c9a374e5f">
+      <Execution id="f277f2e6-7e41-4964-9cef-6f230f3f344f" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="GetCurrentUser_Authorized_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetStatistics_ReturnsStatistics" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="d75c6d43-cc3e-ce58-8401-0c6ce2a3f2ca">
+      <Execution id="57e5c778-443e-4fc1-a043-e2bbb8872159" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetStatistics_ReturnsStatistics" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.RefreshToken_ValidPayload_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="71729b33-f74d-f434-e8b7-a74f5c0cd63c">
+      <Execution id="f80ad86f-c5ba-491f-b31b-63f407748575" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="RefreshToken_ValidPayload_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_ValidOrder_ReturnsCreated" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="a805013e-03b7-61cb-1079-0ffc6e10026c">
+      <Execution id="d2a7d58e-d065-49e5-a553-8c8dc04d2c99" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="Create_ValidOrder_ReturnsCreated" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetById_ExistingOrder_ReturnsOrder" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="67086fe1-5c25-29d8-5c02-722dd84a70b6">
+      <Execution id="fd9588f9-b8b5-427e-9200-72db158b8d39" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetById_ExistingOrder_ReturnsOrder" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEntityHistory_ReturnsAllRecordedEvents" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="6d5dfb20-1812-11b8-0b4c-946b8feeee80">
+      <Execution id="9bb1cd69-1e64-4683-a5ab-90ff5a2f5ef0" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="GetEntityHistory_ReturnsAllRecordedEvents" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.RevokeToken_ValidPayload_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="a678c979-21f7-4641-2e2f-8b83215376d9">
+      <Execution id="aca9a48e-3b07-433e-ac27-326faf062554" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="RevokeToken_ValidPayload_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests.Upload_ValidFile_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="dfdadf08-d0e1-c473-9583-37d7ed9097fb">
+      <Execution id="49c686e9-dd30-4334-8e08-6fe635976cce" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests" name="Upload_ValidFile_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.Update_ExistingProduct_ReturnsSuccess" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="7248b706-aa16-2e3e-cf3a-8884b4de7c04">
+      <Execution id="b2138172-4eca-4514-b36d-f32563b11aa5" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="Update_ExistingProduct_ReturnsSuccess" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetById_NonExistentReview_ReturnsNotFound" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="983d0cbf-b7e8-bfb2-1915-b00c271d8bb4">
+      <Execution id="6e2d097c-a829-4aa5-a6f9-87e40bfe4d5e" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="GetById_NonExistentReview_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.Update_ExistingReview_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="deab5987-b08c-9af9-08d9-7c9026fc0de2">
+      <Execution id="bdef574b-0e79-446d-b28d-648bbc4b11fe" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="Update_ExistingReview_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.Create_ValidProduct_ReturnsCreated" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="7a5b7038-9ed3-44fa-6971-2b66a69d25e1">
+      <Execution id="67de429b-d0e4-460c-a361-f396e1bd956f" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="Create_ValidProduct_ReturnsCreated" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithDuplicateSandwich_ReturnsBadRequest" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="f4cc1386-4afd-f4a8-b59d-4a11734b9cd9">
+      <Execution id="db6e9d8b-ba57-4d95-9e3d-7d468cc35cab" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="Create_WithDuplicateSandwich_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.GetAll_ReturnsSuccessStatusCode" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="1190c674-92a8-5c1b-b36b-a05ef8f3a1cd">
+      <Execution id="90d66d80-cb72-47ce-a2f8-a9110d171b1f" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="GetAll_ReturnsSuccessStatusCode" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByType_ReturnsOrderEvents" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="4babeffe-473f-ff92-0994-5b89120bcbc0">
+      <Execution id="8f654fe2-bb1a-4a50-af96-353ed458c239" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="GetEventsByType_ReturnsOrderEvents" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithoutSandwich_ReturnsBadRequest" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="17ad3799-f61f-40fe-ae69-e2ffefb73f16">
+      <Execution id="14b6aa5c-2ec4-433d-9f7d-6beaf6868ede" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="Create_WithoutSandwich_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests.Delete_ExistingFile_ReturnsNoContent" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="1cae2737-9357-610e-d6c4-62a4ef17e65b">
+      <Execution id="79d2ea90-0435-479a-8a34-2b7fcb41e6fa" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests" name="Delete_ExistingFile_ReturnsNoContent" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.OAuth2Login_ValidPayload_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="a4568453-8c66-7330-0bc2-4591d7fc83d8">
+      <Execution id="5992f22b-a416-40b0-8bed-fce918c135c3" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="OAuth2Login_ValidPayload_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.TimeTravel_ReturnsStateUpToCutoffTimestamp" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="750e9c14-a9bf-1c5d-8f50-bcab841fe08a">
+      <Execution id="112eb5d6-1127-45f8-bf40-e4fa7ad88717" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="TimeTravel_ReturnsStateUpToCutoffTimestamp" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetById_ExistingReview_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="83075047-f4eb-8031-9f3b-7a35d91f6c53">
+      <Execution id="215b867e-dadc-4a35-ac06-d2416a5556b4" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="GetById_ExistingReview_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="9f9ae67e-7878-4105-8bee-eec8b172f953">
+      <Execution id="6a185b29-16f7-44e9-b4bc-e0a48e2bbc47" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="ExportToExcel_WithoutFilters_ReturnsExcelFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.ReplayEvents_ReturnsOrderedTimeline" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="c55840e9-3831-2b89-7b7d-b52eeda7bbb9">
+      <Execution id="f317066c-18be-47ac-aeb6-0fb5640ddc49" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuditControllerTests" name="ReplayEvents_ReturnsOrderedTimeline" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests.GetAll_WithPagination_ReturnsPagedResponse" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="5ee845c9-53fd-da9a-02f7-f26a9c986673">
+      <Execution id="951cff72-cd86-47b5-8985-739e72019860" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.CustomerReviewControllerTests" name="GetAll_WithPagination_ReturnsPagedResponse" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests.Download_ExistingFile_ReturnsFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="b767ef6f-e17b-e710-f599-ee88d0961133">
+      <Execution id="6f10795f-8e1e-4f24-ac12-0c8739f68163" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.DocumentControllerTests" name="Download_ExistingFile_ReturnsFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests.UpdateProfile_Authorized_ReturnsOk" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="90790fff-eaf2-f7fb-d4b3-9ec24d53c433">
+      <Execution id="147be6de-01c5-44f8-ba7d-a3defb7722f0" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.AuthControllerTests" name="UpdateProfile_Authorized_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetMenu_ReturnsGroupedMenu" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="a39f0177-1a81-aec3-7d33-a8476cc64864">
+      <Execution id="8bb07c95-e3fb-450b-a08c-b2564081c41d" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetMenu_ReturnsGroupedMenu" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests.GetById_ExistingProduct_ReturnsProduct" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\release\net10.0\integration.dll" id="f56a00e1-41a3-f4f6-f7db-2670ca17c845">
+      <Execution id="c59cf5a8-2367-4c8f-bb2f-5f1f04b16d76" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Release\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.ProductControllerTests" name="GetById_ExistingProduct_ReturnsProduct" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="67086fe1-5c25-29d8-5c02-722dd84a70b6" executionId="fd9588f9-b8b5-427e-9200-72db158b8d39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="83075047-f4eb-8031-9f3b-7a35d91f6c53" executionId="215b867e-dadc-4a35-ac06-d2416a5556b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28394b36-42da-9186-7899-35af75c2bb42" executionId="9de18d19-a00e-4827-88db-0a500a0c3f63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="71729b33-f74d-f434-e8b7-a74f5c0cd63c" executionId="f80ad86f-c5ba-491f-b31b-63f407748575" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="deab5987-b08c-9af9-08d9-7c9026fc0de2" executionId="bdef574b-0e79-446d-b28d-648bbc4b11fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4568453-8c66-7330-0bc2-4591d7fc83d8" executionId="5992f22b-a416-40b0-8bed-fce918c135c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d5dfb20-1812-11b8-0b4c-946b8feeee80" executionId="9bb1cd69-1e64-4683-a5ab-90ff5a2f5ef0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7248b706-aa16-2e3e-cf3a-8884b4de7c04" executionId="b2138172-4eca-4514-b36d-f32563b11aa5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="750e9c14-a9bf-1c5d-8f50-bcab841fe08a" executionId="112eb5d6-1127-45f8-bf40-e4fa7ad88717" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="82a0dc64-faaa-8f8c-1ecb-10a69aa584a6" executionId="0ed62cae-d063-46b1-aa45-d25b4c7c8692" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b767ef6f-e17b-e710-f599-ee88d0961133" executionId="6f10795f-8e1e-4f24-ac12-0c8739f68163" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9d993f34-1c7a-8035-b2ed-8c474c4106f1" executionId="1544c685-83c4-4ad1-b8c4-80af4da00ae4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ee845c9-53fd-da9a-02f7-f26a9c986673" executionId="951cff72-cd86-47b5-8985-739e72019860" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c9e3f8e5-b9e5-c78d-d8a6-62773de8f26e" executionId="0063b8b6-47ee-413d-b1d9-f26dd7d6fc8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="446f0186-cf49-d3ae-5e66-21649eed8cbe" executionId="51b8ebb5-4ff4-430e-8394-105bd35d98ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1cae2737-9357-610e-d6c4-62a4ef17e65b" executionId="79d2ea90-0435-479a-8a34-2b7fcb41e6fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a678c979-21f7-4641-2e2f-8b83215376d9" executionId="aca9a48e-3b07-433e-ac27-326faf062554" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff05091e-d3a7-e6b6-f0ee-f82a49cc3b07" executionId="5b224251-916c-45cb-8148-7992b8a7e137" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a5b7038-9ed3-44fa-6971-2b66a69d25e1" executionId="67de429b-d0e4-460c-a361-f396e1bd956f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="983d0cbf-b7e8-bfb2-1915-b00c271d8bb4" executionId="6e2d097c-a829-4aa5-a6f9-87e40bfe4d5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d88c3b6c-86bd-bad5-ba66-8fec3fd590f3" executionId="3ac40b8a-a9ea-426c-8703-2a75fee49a94" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4babeffe-473f-ff92-0994-5b89120bcbc0" executionId="8f654fe2-bb1a-4a50-af96-353ed458c239" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a805013e-03b7-61cb-1079-0ffc6e10026c" executionId="d2a7d58e-d065-49e5-a553-8c8dc04d2c99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b50f6cf-d2ef-9bca-4c3e-f46c70b23d5e" executionId="30b5f15c-43ce-419d-9e7f-048175502ede" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3273140-4342-fac4-da41-e07e160af92a" executionId="08ba602a-35a2-45f7-bc51-ef5ae78f823b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27696f45-df14-de87-c601-56bf02839185" executionId="30573869-26ec-4008-996f-205af1d18bd8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c55840e9-3831-2b89-7b7d-b52eeda7bbb9" executionId="f317066c-18be-47ac-aeb6-0fb5640ddc49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="680484a5-b13b-7399-040a-7932c374f180" executionId="41c43f00-8cb8-469c-ae1d-e7fd29eaffb7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2f63d3e7-ccf1-b63f-ee6b-6bb52db902e3" executionId="63f3a36e-685d-4b05-8fa6-1e9ca80ce732" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f9ae67e-7878-4105-8bee-eec8b172f953" executionId="6a185b29-16f7-44e9-b4bc-e0a48e2bbc47" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f56a00e1-41a3-f4f6-f7db-2670ca17c845" executionId="c59cf5a8-2367-4c8f-bb2f-5f1f04b16d76" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7292d8e-d9d5-6cfe-bdbb-af6cc5d8e118" executionId="525cccbc-8a78-460c-98de-dd87e0c9d74b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8538249f-ebcc-7a83-7229-9f6305259c2d" executionId="fb3c8671-ef6b-4f49-bf44-c4e08cc71750" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a8097f2-32a0-b0e6-1135-f47c9a374e5f" executionId="f277f2e6-7e41-4964-9cef-6f230f3f344f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4cc1386-4afd-f4a8-b59d-4a11734b9cd9" executionId="db6e9d8b-ba57-4d95-9e3d-7d468cc35cab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="44b0a5e2-416a-6740-3a3d-ddbdd364e9ca" executionId="ddc64ea0-6904-43cc-a801-a09d16532ee6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a39f0177-1a81-aec3-7d33-a8476cc64864" executionId="8bb07c95-e3fb-450b-a08c-b2564081c41d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17ad3799-f61f-40fe-ae69-e2ffefb73f16" executionId="14b6aa5c-2ec4-433d-9f7d-6beaf6868ede" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d75c6d43-cc3e-ce58-8401-0c6ce2a3f2ca" executionId="57e5c778-443e-4fc1-a043-e2bbb8872159" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="86900998-4cda-53b3-2fc3-ed50bafd5333" executionId="4fe28bc1-666c-49e3-9403-ca51204400ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dfdadf08-d0e1-c473-9583-37d7ed9097fb" executionId="49c686e9-dd30-4334-8e08-6fe635976cce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27a190ce-7ecc-160c-2bdc-f68e81dfadb1" executionId="50b8a3cb-4a5f-452e-92ff-0e3a325bde0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1190c674-92a8-5c1b-b36b-a05ef8f3a1cd" executionId="90d66d80-cb72-47ce-a2f8-a9110d171b1f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c74c802-6721-a05c-ed69-1b3f159c2bde" executionId="0f5d5106-901e-434d-9fe2-45da5140881d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="386911ae-a61f-1123-745d-8710f052ab7f" executionId="3a950eca-59cf-4731-854f-38d3e51175e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90790fff-eaf2-f7fb-d4b3-9ec24d53c433" executionId="147be6de-01c5-44f8-ba7d-a3defb7722f0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffddc978-7d5b-5862-55c8-8e8b31a69e92" executionId="057cc138-0348-4e2e-82e5-2393c18072b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f9978680-2e52-92b6-21a8-3a6ef15a70c7" executionId="a7869f7e-b9e9-486b-86c4-d4518d07f3a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="48" executed="48" passed="41" failed="7" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.6)&#xD;
+[xUnit.net 00:00:00.22]   Discovering: Integration&#xD;
+[xUnit.net 00:00:00.46]   Discovered:  Integration&#xD;
+[xUnit.net 00:00:00.67]   Starting:    Integration&#xD;
+[xUnit.net 00:00:02.10]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.10]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.10]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(161,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates)&#xD;
+[xUnit.net 00:00:02.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(145,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetStatistics_ReturnsAggregatedMetrics()&#xD;
+[xUnit.net 00:00:02.10]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.10]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.10]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.10]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(161,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates)&#xD;
+[xUnit.net 00:00:02.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(110,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByType_ReturnsOrderEvents()&#xD;
+[xUnit.net 00:00:02.10]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.14]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.14]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.14]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.14]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.15]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(51,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.TimeTravel_ReturnsStateUpToCutoffTimestamp()&#xD;
+[xUnit.net 00:00:02.15]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.15]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.15]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.15]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.15]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.15]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(161,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates)&#xD;
+[xUnit.net 00:00:02.15]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(93,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByVersion_ReturnsFilteredRange()&#xD;
+[xUnit.net 00:00:02.15]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.17]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.17]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.17]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.17]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.17]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(161,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates)&#xD;
+[xUnit.net 00:00:02.17]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(127,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByUser_ReturnsOkPayload()&#xD;
+[xUnit.net 00:00:02.17]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.18]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.18]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.18]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.18]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.18]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(161,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates)&#xD;
+[xUnit.net 00:00:02.18]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(32,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEntityHistory_ReturnsAllRecordedEvents()&#xD;
+[xUnit.net 00:00:02.18]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.19]       Expected response.StatusCode to be HttpStatusCode.Created {value: 201}, but found HttpStatusCode.BadRequest {value: 400}.&#xD;
+[xUnit.net 00:00:02.19]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.19]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:02.19]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(204,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.CreateOrderAsync(Int64 productId)&#xD;
+[xUnit.net 00:00:02.19]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(161,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.SeedOrderLifecycleAsync(Int32 additionalUpdates)&#xD;
+[xUnit.net 00:00:02.19]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\AuditControllerTests.cs(74,0): at GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.ReplayEvents_ReturnsOrderedTimeline()&#xD;
+[xUnit.net 00:00:02.19]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.45]   Finished:    Integration (ID = '2824a42bcb8b6ef7ed5e91b4e9c0b47cbd7d59b7a10a2ed30a64a1ecd6c477cc')&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.1842157-04:00">
+        <Text>[xUnit.net 00:00:02.10]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetStatistics_ReturnsAggregatedMetrics [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.1895230-04:00">
+        <Text>[xUnit.net 00:00:02.10]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByType_ReturnsOrderEvents [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.2310213-04:00">
+        <Text>[xUnit.net 00:00:02.14]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.TimeTravel_ReturnsStateUpToCutoffTimestamp [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.2447094-04:00">
+        <Text>[xUnit.net 00:00:02.15]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByVersion_ReturnsFilteredRange [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.2599684-04:00">
+        <Text>[xUnit.net 00:00:02.17]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEventsByUser_ReturnsOkPayload [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.2670293-04:00">
+        <Text>[xUnit.net 00:00:02.18]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.GetEntityHistory_ReturnsAllRecordedEvents [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:14:23.2727529-04:00">
+        <Text>[xUnit.net 00:00:02.19]     GoodHamburger.Integration.Tests.Controllers.AuditControllerTests.ReplayEvents_ReturnsOrderedTimeline [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: GoodHamburger-api
+  namespace: GoodHamburger
+  labels:
+    app: GoodHamburger-api
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: api.GoodHamburger.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: GoodHamburger-api
+                port:
+                  number: 80
+  # Uncomment for TLS/HTTPS
+  # tls:
+  #   - hosts:
+  #       - api.GoodHamburger.local
+  #     secretName: GoodHamburger-tls

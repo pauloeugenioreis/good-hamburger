@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>GoodHamburger.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Entity Framework Core (Default ORM) -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <!-- Database Providers - All enabled by default -->
+    <!-- Note: PostgreSQL and MySQL providers are using .NET 9 versions (compatible with .NET 10) -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="10.23.26200" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+
+    <!-- Dapper (Alternative/Complementary ORM for high-performance queries) -->
+    <PackageReference Include="Dapper" Version="2.1.72" />
+    <!-- System.Data.SqlClient REMOVED - Obsolete/Replaced -->
+    <!-- Use Microsoft.Data.SqlClient instead (modern, actively maintained) -->
+    <!-- Version 6.1.1+ required by EF Core 10.0.2 -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+
+    <!-- Other ORMs - Uncomment if needed -->
+    <!-- NHibernate -->
+    <!-- <PackageReference Include="NHibernate" Version="5.5.2" /> -->
+    <!-- <PackageReference Include="FluentNHibernate" Version="3.4.0" /> -->
+
+    <!-- Linq2Db (Alternative ORM) -->
+    <!-- <PackageReference Include="linq2db" Version="5.4.1" /> -->
+    <!-- <PackageReference Include="linq2db.EntityFrameworkCore" Version="8.1.0" /> -->
+
+    <!-- AutoMapper for object mapping -->
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+
+    <!-- MongoDB Driver (used by MongoRepository) -->
+    <PackageReference Include="MongoDB.Driver" Version="3.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <!-- Exclude NHibernate files from compilation when NHibernate is not installed -->
+  <ItemGroup>
+    <Compile Remove="Mappings\NHibernate\**" />
+    <Compile Remove="Repository\NHibernate\**" />
+  </ItemGroup>
+
+  <!-- Exclude Linq2Db files from compilation when Linq2Db is not installed -->
+  <ItemGroup>
+    <Compile Remove="Context\ApplicationDataConnection.cs" />
+    <Compile Remove="Repository\Linq2Db\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.201" />
+    <PackageReference Update="SonarAnalyzer.CSharp" Version="10.23.0.137933" />
+  </ItemGroup>
+
+  <!-- All ORM implementations are now compiled -->
+  <!-- Scrutor is configured to only auto-register EF Core repositories -->
+  <!-- Dapper, ADO.NET, NHibernate, and Linq2Db are registered manually when their Add methods are called -->
+
+</Project>

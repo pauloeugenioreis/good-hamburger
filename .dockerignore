@@ -1,0 +1,108 @@
+# Ignore Git files
+.git
+.gitignore
+.gitattributes
+
+# Ignore IDE files
+.vs
+.vscode
+.idea
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+TestResults/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Node modules (if using any JS tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Documentation build artifacts
+_site/
+*.docx
+*.pdf
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Docker specific
+**/.dockerignore
+**/.env
+**/docker-compose*.yml
+**/Dockerfile*
+README.md
+LICENSE
+CHANGELOG.md
+
+# Scripts
+scripts/
+*.sh
+*.bat
+*.ps1
+
+# Documentation
+docs/
+*.md
+
+# CI/CD
+.github/
+.azure-pipelines/
+.gitlab-ci.yml
+azure-pipelines.yml
+
+# Kubernetes
+**/.k8s/
+*.yaml
+*.yml
+
+# Monitoring
+monitoring/

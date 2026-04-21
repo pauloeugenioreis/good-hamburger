@@ -1,0 +1,316 @@
+@page "/auditoria"
+@inject IAuditClient ApiClient
+@using System.Text.Json
+@using System.Globalization
+
+<PageTitle>GoodHamburger | Auditoria</PageTitle>
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Auditoria</p>
+        <h1>Event sourcing</h1>
+        <p class="lead">Consulte histórico, replay e estatísticas expostos pela API pública de auditoria.</p>
+    </div>
+    <button class="secondary-button" type="button" @onclick="LoadStatisticsAsync" disabled="@isLoading">Estatísticas</button>
+</section>
+
+<section class="page-card" style="margin-bottom: 2rem;">
+    <div class="form-grid form-grid--align-end" style="grid-template-columns: 1fr 1fr auto;">
+        <label class="field">
+            <span>Tipo da entidade</span>
+            <select class="input" @bind="entityType">
+                <option value="Product">Product</option>
+                <option value="Order">Order</option>
+            </select>
+        </label>
+        <label class="field">
+            <span>ID da entidade (opcional)</span>
+            <input class="input" @bind="entityId" placeholder="Ex: 6" />
+        </label>
+        <button class="primary-button" type="button" @onclick="() => LoadHistoryAsync(1)" disabled="@isLoading">Carregar histórico</button>
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="inline-alert inline-alert--error">@errorMessage</div>
+    }
+
+    @if (isLoading && events.Count == 0 && !hasStatistics)
+    {
+        <p class="muted" style="margin-top: 1rem;">Buscando histórico de auditoria...</p>
+    }
+</section>
+
+@if (hasStatistics)
+{
+    <section class="page-card page-card--highlight">
+        <p class="eyebrow">Estatísticas</p>
+        <pre class="code-block">@PrettyPrint(statistics)</pre>
+    </section>
+}
+
+@if (events.Count > 0)
+{
+    <section class="products-layout">
+        <article class="page-card products-list-card">
+            <div class="products-table-wrap">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Evento</th>
+                            <th>Agregado</th>
+                            <th>Versão</th>
+                            <th>Data</th>
+                            <th class="products-table__actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in events)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="products-table__title">
+                                        <strong>@GetString(item, "eventType")</strong>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="products-table__title">
+                                        <span>@GetString(item, "aggregateType")</span>
+                                        <span class="muted">@GetString(item, "aggregateId")</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="status-pill">V@(GetString(item, "version"))</span>
+                                </td>
+                                <td>
+                                    <span class="muted">@FormatDate(GetString(item, "occurredOn"))</span>
+                                </td>
+                                <td>
+                                    <button class="secondary-button" type="button" @onclick="() => ShowDetails(item)">Detalhes</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (totalPages > 1)
+            {
+                <div class="pagination-bar">
+                    <div class="pagination-bar__start">
+                        <label class="field--inline">
+                            <span class="muted">Itens por página:</span>
+                            <select class="input" value="@pageSize" @onchange="OnPageSizeChanged">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="pagination-bar__center">
+                        <button class="secondary-button" type="button" @onclick="PreviousPageAsync" disabled="@(!CanGoPrevious || isLoading)">Anterior</button>
+                        <div class="pagination-bar__pages">
+                            @for (var pageNumber = 1; pageNumber <= totalPages; pageNumber++)
+                            {
+                                var pageIndex = pageNumber;
+
+                                <button class="pagination-button @(pageIndex == currentPage ? "pagination-button--active" : string.Empty)" type="button" @onclick="() => GoToPageAsync(pageIndex)" disabled="@(pageIndex == currentPage || isLoading)">
+                                    @pageIndex
+                                </button>
+                            }
+                        </div>
+                        <button class="secondary-button" type="button" @onclick="NextPageAsync" disabled="@(!CanGoNext || isLoading)">Próxima</button>
+                    </div>
+
+                    <div class="pagination-bar__end">
+                        <span class="status-pill status-pill--muted">Total de Itens: @totalEvents</span>
+                    </div>
+                </div>
+            }
+        </article>
+
+        <aside class="products-drawer @(isDetailsOpen ? "products-drawer--open" : string.Empty)">
+            <button class="drawer-backdrop" type="button" aria-label="Fechar detalhes" @onclick="CloseDetails"></button>
+            <article class="page-card products-editor-card">
+                <div class="drawer-header">
+                    <div>
+                        <p class="eyebrow">JSON Evento</p>
+                        <h2>@GetString(selectedEvent, "eventType")</h2>
+                    </div>
+                    <button class="secondary-button drawer-close" type="button" @onclick="CloseDetails">Fechar</button>
+                </div>
+                <pre class="code-block">@PrettyPrint(selectedEvent)</pre>
+            </article>
+        </aside>
+    </section>
+}
+
+@code {
+    private int pageSize = 10;
+    private readonly List<JsonElement> events = [];
+    private JsonElement statistics;
+    private JsonElement selectedEvent;
+    private bool hasStatistics;
+    private bool isDetailsOpen;
+    private string entityType = "Product";
+    private string entityId = string.Empty;
+    private string? errorMessage;
+    private bool isLoading;
+    private int currentPage = 1;
+    private long totalEvents;
+    private int totalPages;
+
+    private bool CanGoPrevious => currentPage > 1;
+    private bool CanGoNext => currentPage < totalPages;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadHistoryAsync(1);
+    }
+
+    private async Task LoadHistoryAsync(int page)
+    {
+        isLoading = true;
+        errorMessage = null;
+        hasStatistics = false;
+        
+        currentPage = page;
+        var offset = (currentPage - 1) * pageSize;
+
+        var result = await ApiClient.GetAuditHistoryAsync(entityType, string.IsNullOrWhiteSpace(entityId) ? null : entityId.Trim(), pageSize, offset);
+
+        if (result.IsSuccess && result.Value is not null)
+        {
+            events.Clear();
+            events.AddRange(result.Value.Items);
+            totalEvents = result.Value.Total;
+            totalPages = result.Value.TotalPages;
+
+            if (events.Count == 0 && currentPage > 1)
+            {
+                currentPage = Math.Max(1, totalPages);
+                isLoading = false;
+                // Avoid infinite recursive call if it's truly empty
+                if (totalPages > 0) await LoadHistoryAsync(currentPage);
+                return;
+            }
+        }
+        else
+        {
+            errorMessage = result.ErrorMessage ?? "Não foi possível carregar o histórico de auditoria.";
+            events.Clear();
+            totalEvents = 0;
+            totalPages = 0;
+        }
+
+        isLoading = false;
+    }
+
+    private async Task OnPageSizeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var size))
+        {
+            pageSize = size;
+            await LoadHistoryAsync(1);
+        }
+    }
+
+    private async Task GoToPageAsync(int page)
+    {
+        if (page != currentPage) await LoadHistoryAsync(page);
+    }
+
+    private async Task PreviousPageAsync()
+    {
+        if (CanGoPrevious) await LoadHistoryAsync(currentPage - 1);
+    }
+
+    private async Task NextPageAsync()
+    {
+        if (CanGoNext) await LoadHistoryAsync(currentPage + 1);
+    }
+
+    private void ShowDetails(JsonElement item)
+    {
+        selectedEvent = item;
+        isDetailsOpen = true;
+    }
+
+    private void CloseDetails()
+    {
+        isDetailsOpen = false;
+    }
+
+    private async Task ReplayAsync()
+    {
+        if (string.IsNullOrWhiteSpace(entityId))
+        {
+            errorMessage = "Informe o ID da entidade para executar o replay.";
+            return;
+        }
+
+        isLoading = true;
+        errorMessage = null;
+        hasStatistics = false;
+        events.Clear();
+
+        var result = await ApiClient.ReplayAuditAsync(entityType, entityId.Trim());
+
+        if (result.IsSuccess)
+        {
+            events.Add(result.Value);
+            selectedEvent = result.Value;
+            isDetailsOpen = true;
+        }
+        else
+        {
+            errorMessage = result.ErrorMessage ?? "Não foi possível executar o replay.";
+        }
+
+        isLoading = false;
+    }
+
+    private async Task LoadStatisticsAsync()
+    {
+        isLoading = true;
+        errorMessage = null;
+        events.Clear();
+
+        var result = await ApiClient.GetAuditStatisticsAsync();
+
+        if (result.IsSuccess)
+        {
+            statistics = result.Value;
+            hasStatistics = true;
+        }
+        else
+        {
+            errorMessage = result.ErrorMessage ?? "Não foi possível carregar as estatísticas.";
+        }
+
+        isLoading = false;
+    }
+
+    private static string PrettyPrint(JsonElement value)
+    {
+        if (value.ValueKind == JsonValueKind.Undefined || value.ValueKind == JsonValueKind.Null) return "{}";
+        return JsonSerializer.Serialize(value, new JsonSerializerOptions { WriteIndented = true });
+    }
+
+    private static string GetString(JsonElement element, string propertyName)
+    {
+        if (element.ValueKind == JsonValueKind.Undefined || element.ValueKind == JsonValueKind.Null) return "-";
+        return element.TryGetProperty(propertyName, out var property) ? property.ToString() : "-";
+    }
+
+    private static string FormatDate(string dateStr)
+    {
+        if (DateTime.TryParse(dateStr, out var date))
+        {
+            return date.ToString("dd/MM/yyyy HH:mm:ss", CultureInfo.GetCultureInfo("pt-BR"));
+        }
+        return dateStr;
+    }
+}

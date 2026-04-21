@@ -1,0 +1,28 @@
+@inherits LayoutComponentBase
+
+<div class="app-shell">
+    <GlobalLoader />
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">GH</div>
+            <div>
+                <h2>GoodHamburger</h2>
+            </div>
+        </div>
+
+        <nav class="nav-menu" aria-label="Navegação principal">
+            <NavLink href="/" Match="NavLinkMatch.All">Início</NavLink>
+            <NavLink href="/pedidos">Pedido</NavLink>
+            <NavLink href="/produtos">Produtos</NavLink>
+            <NavLink href="/auditoria">Auditoria</NavLink>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span>API v1</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        @Body
+    </main>
+</div>

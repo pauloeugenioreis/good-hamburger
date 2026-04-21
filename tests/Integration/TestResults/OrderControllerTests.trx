@@ -1,0 +1,978 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="3ed07638-3abe-408b-98d6-b2c3f33d2e2a" name="Paulo@DESKTOP-RPR17NI 2026-04-20 12:07:09" runUser="DESKTOP-RPR17NI\Paulo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-04-20T12:07:09.2551717-04:00" queuing="2026-04-20T12:07:09.2551726-04:00" start="2026-04-20T12:07:07.6432231-04:00" finish="2026-04-20T12:07:09.3212410-04:00" />
+  <TestSettings name="default" id="8363e5bd-7412-438b-aa1b-fc71862f5ad5">
+    <Deployment runDeploymentRoot="Paulo_DESKTOP-RPR17NI_2026-04-20_12_07_09" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="13c498de-ec6d-4b53-a190-eb728143a755" testId="db6aa0bf-b01f-8b7a-bed5-2c3a47c14e36" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithoutSandwich_ReturnsBadRequest" computerName="DESKTOP-RPR17NI" duration="00:00:00.0065818" startTime="2026-04-20T12:07:09.2175190-04:00" endTime="2026-04-20T12:07:09.2243481-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="13c498de-ec6d-4b53-a190-eb728143a755">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c458b376-8ecd-4f00-95bf-eb3fed8859a9" testId="290cf5d9-43e8-923c-d143-b698cdaa6d5a" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetMenu_ReturnsGroupedMenu" computerName="DESKTOP-RPR17NI" duration="00:00:00.0072407" startTime="2026-04-20T12:07:09.1945268-04:00" endTime="2026-04-20T12:07:09.2020874-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c458b376-8ecd-4f00-95bf-eb3fed8859a9">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a7d0bc23-b4da-434a-9ac0-aa94d39369ab" testId="563ecd49-b4ac-1d88-36b8-3ef271e830b2" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithDuplicateSandwich_ReturnsBadRequest" computerName="DESKTOP-RPR17NI" duration="00:00:00.0138475" startTime="2026-04-20T12:07:09.1332857-04:00" endTime="2026-04-20T12:07:09.1474458-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7d0bc23-b4da-434a-9ac0-aa94d39369ab">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2f3a0b36-349a-469f-ab16-e160764dbf72" testId="27b51bf2-6ca4-a2ac-1850-fd439ad3aac2" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.0144184" startTime="2026-04-20T12:07:09.1178418-04:00" endTime="2026-04-20T12:07:09.1326546-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f3a0b36-349a-469f-ab16-e160764dbf72">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a098dfd0-91c1-4aa9-8873-9f7bf2155ddd" testId="425e89e2-99e1-db3a-bc76-48a314a2abf4" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.UpdateStatus_ValidOrder_ReturnsSuccess" computerName="DESKTOP-RPR17NI" duration="00:00:00.0068510" startTime="2026-04-20T12:07:09.2100600-04:00" endTime="2026-04-20T12:07:09.2172326-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a098dfd0-91c1-4aa9-8873-9f7bf2155ddd">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f31ade4d-d73f-4b18-a3c2-4f4f1e6a394c" testId="81fb4936-c1f0-7faf-cb22-8c52420d17d4" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetByCustomer_ReturnsOrders" computerName="DESKTOP-RPR17NI" duration="00:00:00.2865692" startTime="2026-04-20T12:07:08.7945491-04:00" endTime="2026-04-20T12:07:09.1003846-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f31ade4d-d73f-4b18-a3c2-4f4f1e6a394c">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Constructor(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="511e396d-fe46-45f9-8a1d-23c89d351b50" testId="8bd74277-f34a-33f3-34de-e6cce72ce5e5" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_ValidOrder_ReturnsCreated" computerName="DESKTOP-RPR17NI" duration="00:00:00.0122770" startTime="2026-04-20T12:07:09.1625206-04:00" endTime="2026-04-20T12:07:09.1751367-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="511e396d-fe46-45f9-8a1d-23c89d351b50">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6eb09064-3c91-45ad-9ee8-6438caa7b1f2" testId="8b244b6f-2dfd-a009-9084-09af9b00b166" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetById_ExistingOrder_ReturnsOrder" computerName="DESKTOP-RPR17NI" duration="00:00:00.0069462" startTime="2026-04-20T12:07:09.2025084-04:00" endTime="2026-04-20T12:07:09.2097770-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6eb09064-3c91-45ad-9ee8-6438caa7b1f2">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bd75a53a-9923-4dcc-a1ec-3a66b78e2cd8" testId="18621dd1-bd7c-c7f1-7721-2eda413c91b1" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile" computerName="DESKTOP-RPR17NI" duration="00:00:00.0082434" startTime="2026-04-20T12:07:09.1761867-04:00" endTime="2026-04-20T12:07:09.1847225-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd75a53a-9923-4dcc-a1ec-3a66b78e2cd8">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7b210a03-da2f-4786-aa8c-01c6bb59a21d" testId="104197c6-e7ee-0063-4490-d3f2d4625c53" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.CancelOrder_ExistingOrder_ReturnsCancelledOrder" computerName="DESKTOP-RPR17NI" duration="00:00:00.0112815" startTime="2026-04-20T12:07:09.1055590-04:00" endTime="2026-04-20T12:07:09.1174586-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7b210a03-da2f-4786-aa8c-01c6bb59a21d">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="82de444c-a82d-45d6-ae01-2421668d863b" testId="b5e6119b-a41b-e8f8-dec7-399f78405339" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetStatistics_ReturnsStatistics" computerName="DESKTOP-RPR17NI" duration="00:00:00.0089928" startTime="2026-04-20T12:07:09.1849846-04:00" endTime="2026-04-20T12:07:09.1942942-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82de444c-a82d-45d6-ae01-2421668d863b">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="258cb788-faa9-4d98-b623-f9505a7c7575" testId="b972df79-993e-b127-939c-9e9a8d50c032" testName="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetAll_ReturnsSuccessStatusCode" computerName="DESKTOP-RPR17NI" duration="00:00:00.0141683" startTime="2026-04-20T12:07:09.1477348-04:00" endTime="2026-04-20T12:07:09.1622371-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="258cb788-faa9-4d98-b623-f9505a7c7575">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.</Message>
+          <StackTrace>   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+   at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs:line 128&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+   at Program.&lt;Main&gt;$(String[] args) in C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs:line 71&#xD;
+   at Program.&lt;Main&gt;(String[] args)&#xD;
+   at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+   at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory) in C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs:line 18&#xD;
+   at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetByCustomer_ReturnsOrders" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="81fb4936-c1f0-7faf-cb22-8c52420d17d4">
+      <Execution id="f31ade4d-d73f-4b18-a3c2-4f4f1e6a394c" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetByCustomer_ReturnsOrders" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetAll_ReturnsSuccessStatusCode" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="b972df79-993e-b127-939c-9e9a8d50c032">
+      <Execution id="258cb788-faa9-4d98-b623-f9505a7c7575" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetAll_ReturnsSuccessStatusCode" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.CancelOrder_ExistingOrder_ReturnsCancelledOrder" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="104197c6-e7ee-0063-4490-d3f2d4625c53">
+      <Execution id="7b210a03-da2f-4786-aa8c-01c6bb59a21d" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="CancelOrder_ExistingOrder_ReturnsCancelledOrder" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetStatistics_ReturnsStatistics" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="b5e6119b-a41b-e8f8-dec7-399f78405339">
+      <Execution id="82de444c-a82d-45d6-ae01-2421668d863b" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetStatistics_ReturnsStatistics" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="18621dd1-bd7c-c7f1-7721-2eda413c91b1">
+      <Execution id="bd75a53a-9923-4dcc-a1ec-3a66b78e2cd8" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="ExportToExcel_WithoutFilters_ReturnsExcelFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithDuplicateSandwich_ReturnsBadRequest" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="563ecd49-b4ac-1d88-36b8-3ef271e830b2">
+      <Execution id="a7d0bc23-b4da-434a-9ac0-aa94d39369ab" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="Create_WithDuplicateSandwich_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="27b51bf2-6ca4-a2ac-1850-fd439ad3aac2">
+      <Execution id="2f3a0b36-349a-469f-ab16-e160764dbf72" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.UpdateStatus_ValidOrder_ReturnsSuccess" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="425e89e2-99e1-db3a-bc76-48a314a2abf4">
+      <Execution id="a098dfd0-91c1-4aa9-8873-9f7bf2155ddd" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="UpdateStatus_ValidOrder_ReturnsSuccess" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetById_ExistingOrder_ReturnsOrder" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="8b244b6f-2dfd-a009-9084-09af9b00b166">
+      <Execution id="6eb09064-3c91-45ad-9ee8-6438caa7b1f2" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetById_ExistingOrder_ReturnsOrder" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithoutSandwich_ReturnsBadRequest" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="db6aa0bf-b01f-8b7a-bed5-2c3a47c14e36">
+      <Execution id="13c498de-ec6d-4b53-a190-eb728143a755" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="Create_WithoutSandwich_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetMenu_ReturnsGroupedMenu" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="290cf5d9-43e8-923c-d143-b698cdaa6d5a">
+      <Execution id="c458b376-8ecd-4f00-95bf-eb3fed8859a9" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="GetMenu_ReturnsGroupedMenu" />
+    </UnitTest>
+    <UnitTest name="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_ValidOrder_ReturnsCreated" storage="c:\projetosgit\pessoal\goodhamburger\tests\integration\bin\debug\net10.0\integration.dll" id="8bd74277-f34a-33f3-34de-e6cce72ce5e5">
+      <Execution id="511e396d-fe46-45f9-8a1d-23c89d351b50" />
+      <TestMethod codeBase="C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\bin\Debug\net10.0\Integration.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GoodHamburger.Integration.Tests.Controllers.OrderControllerTests" name="Create_ValidOrder_ReturnsCreated" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="db6aa0bf-b01f-8b7a-bed5-2c3a47c14e36" executionId="13c498de-ec6d-4b53-a190-eb728143a755" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="290cf5d9-43e8-923c-d143-b698cdaa6d5a" executionId="c458b376-8ecd-4f00-95bf-eb3fed8859a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="563ecd49-b4ac-1d88-36b8-3ef271e830b2" executionId="a7d0bc23-b4da-434a-9ac0-aa94d39369ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27b51bf2-6ca4-a2ac-1850-fd439ad3aac2" executionId="2f3a0b36-349a-469f-ab16-e160764dbf72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="425e89e2-99e1-db3a-bc76-48a314a2abf4" executionId="a098dfd0-91c1-4aa9-8873-9f7bf2155ddd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="81fb4936-c1f0-7faf-cb22-8c52420d17d4" executionId="f31ade4d-d73f-4b18-a3c2-4f4f1e6a394c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8bd74277-f34a-33f3-34de-e6cce72ce5e5" executionId="511e396d-fe46-45f9-8a1d-23c89d351b50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8b244b6f-2dfd-a009-9084-09af9b00b166" executionId="6eb09064-3c91-45ad-9ee8-6438caa7b1f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18621dd1-bd7c-c7f1-7721-2eda413c91b1" executionId="bd75a53a-9923-4dcc-a1ec-3a66b78e2cd8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="104197c6-e7ee-0063-4490-d3f2d4625c53" executionId="7b210a03-da2f-4786-aa8c-01c6bb59a21d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5e6119b-a41b-e8f8-dec7-399f78405339" executionId="82de444c-a82d-45d6-ae01-2421668d863b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b972df79-993e-b127-939c-9e9a8d50c032" executionId="258cb788-faa9-4d98-b623-f9505a7c7575" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="12" executed="12" passed="0" failed="12" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.6)&#xD;
+[xUnit.net 00:00:00.23]   Discovering: Integration&#xD;
+[xUnit.net 00:00:00.47]   Discovered:  Integration&#xD;
+[xUnit.net 00:00:00.70]   Starting:    Integration&#xD;
+[xUnit.net 00:00:01.07]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.07]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.07]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.07]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.07]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.07]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:01.07]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:01.07]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.07]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.07]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.07]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Constructor(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:01.07]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:01.08]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.08]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.08]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.08]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.08]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.08]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.08]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.08]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.08]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.08]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.08]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.08]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.10]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.10]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.10]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.10]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.10]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.10]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.10]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.10]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.10]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.10]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.10]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.11]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.11]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.11]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.11]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.11]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.11]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.11]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.11]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.11]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.11]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.11]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.11]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.13]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.13]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.13]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.13]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.13]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.13]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.13]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.13]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.13]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.13]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.13]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.13]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.14]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.14]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.14]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.14]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.14]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.14]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.14]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.14]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.14]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.14]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.14]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.15]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.15]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.15]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.15]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.15]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.15]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.15]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.15]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.15]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.15]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.15]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.16]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.16]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.16]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.16]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.16]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.16]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.16]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.16]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.16]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.16]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.16]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.16]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.17]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.17]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.17]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.17]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.17]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.17]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.17]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.17]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.17]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.17]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.17]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.17]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.19]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.19]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.19]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.19]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.19]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.19]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.19]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.19]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.19]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.19]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.19]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.19]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.20]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.20]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.20]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.20]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.20]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.20]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.20]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.20]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.20]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.20]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.20]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.20]       System.InvalidOperationException : Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.&#xD;
+[xUnit.net 00:00:01.20]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure&lt;System.IServiceProvider&gt;.get_Instance()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()&#xD;
+[xUnit.net 00:00:01.20]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\WebApplicationFactoryFixture.cs(128,0): at GoodHamburger.Integration.Tests.WebApplicationFactoryFixture.&lt;&gt;c.&lt;ConfigureWebHost&gt;b__0_1(IServiceCollection services)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()&#xD;
+[xUnit.net 00:00:01.20]         C:\ProjetosGit\Pessoal\GoodHamburger\src\Api\Program.cs(71,0): at Program.&lt;Main&gt;$(String[] args)&#xD;
+[xUnit.net 00:00:01.20]            at Program.&lt;Main&gt;(String[] args)&#xD;
+[xUnit.net 00:00:01.20]            at InvokeStub_Program.&lt;Main&gt;(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.20]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.20]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.Extensions.Hosting.HostFactoryResolver.&lt;&gt;c__DisplayClass10_0.&lt;ResolveHostFactory&gt;b__0(String[] args)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer()&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)&#xD;
+[xUnit.net 00:00:01.20]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()&#xD;
+[xUnit.net 00:00:01.20]         C:\ProjetosGit\Pessoal\GoodHamburger\tests\Integration\Controllers\OrderControllerTests.cs(18,0): at GoodHamburger.Integration.Tests.Controllers.OrderControllerTests..ctor(WebApplicationFactoryFixture factory)&#xD;
+[xUnit.net 00:00:01.20]            at InvokeStub_OrderControllerTests..ctor(Object, Span`1)&#xD;
+[xUnit.net 00:00:01.20]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:01.20]   Finished:    Integration (ID = '2e097e68a8413050d7182bba57625ab762d9f59edbee7a5f6c97c3f2543572be')&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1060660-04:00">
+        <Text>[xUnit.net 00:00:01.07]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetByCustomer_ReturnsOrders [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1188267-04:00">
+        <Text>[xUnit.net 00:00:01.08]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.CancelOrder_ExistingOrder_ReturnsCancelledOrder [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1338558-04:00">
+        <Text>[xUnit.net 00:00:01.10]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithStatusFilter_ReturnsFilteredExcelFile [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1498427-04:00">
+        <Text>[xUnit.net 00:00:01.11]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithDuplicateSandwich_ReturnsBadRequest [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1631787-04:00">
+        <Text>[xUnit.net 00:00:01.13]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetAll_ReturnsSuccessStatusCode [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1760949-04:00">
+        <Text>[xUnit.net 00:00:01.14]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_ValidOrder_ReturnsCreated [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1855853-04:00">
+        <Text>[xUnit.net 00:00:01.15]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.ExportToExcel_WithoutFilters_ReturnsExcelFile [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.1950804-04:00">
+        <Text>[xUnit.net 00:00:01.16]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetStatistics_ReturnsStatistics [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.2029525-04:00">
+        <Text>[xUnit.net 00:00:01.16]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetMenu_ReturnsGroupedMenu [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.2692596-04:00">
+        <Text>[xUnit.net 00:00:01.19]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.GetById_ExistingOrder_ReturnsOrder [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.2698116-04:00">
+        <Text>[xUnit.net 00:00:01.20]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.UpdateStatus_ValidOrder_ReturnsSuccess [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-RPR17NI" outcome="Error" timestamp="2026-04-20T12:07:09.2702919-04:00">
+        <Text>[xUnit.net 00:00:01.20]     GoodHamburger.Integration.Tests.Controllers.OrderControllerTests.Create_WithoutSandwich_ReturnsBadRequest [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

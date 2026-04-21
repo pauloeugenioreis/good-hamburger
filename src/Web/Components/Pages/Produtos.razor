@@ -1,0 +1,442 @@
+@page "/produtos"
+@inject IProductClient ApiClient
+@inject Microsoft.Extensions.Options.IOptions<ApiOptions> ApiSettings
+@inject IJSRuntime JS
+
+<PageTitle>GoodHamburger | Produtos</PageTitle>
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Administração</p>
+        <h1>Produtos</h1>
+    </div>
+    <div class="toolbar-actions">
+        <button class="secondary-button" type="button" @onclick="OpenNewProduct" disabled="@isLoading">Novo</button>
+        <a class="primary-button" href="@ExportUrl" target="_blank" rel="noopener noreferrer">Exportar</a>
+        <button class="secondary-button" type="button" @onclick="ReloadAsync" disabled="@isLoading">Recarregar</button>
+    </div>
+</section>
+
+@if (!string.IsNullOrWhiteSpace(actionMessage) && !isEditorOpen)
+{
+    <div class="inline-alert">@actionMessage</div>
+}
+
+@if (!string.IsNullOrWhiteSpace(errorMessage) && !isEditorOpen)
+{
+    <div class="inline-alert inline-alert--error">@errorMessage</div>
+}
+
+<section class="products-layout">
+    <article class="page-card products-list-card">
+
+        @if (isLoading)
+        {
+            <p class="muted">Carregando produtos...</p>
+        }
+        else if (products.Count == 0)
+        {
+            <div class="page-card page-card--centered page-card--highlight products-empty">
+                <div>
+                    <p class="eyebrow">Catálogo vazio</p>
+                    <h2>Nenhum produto encontrado</h2>
+                    <p class="muted">Clique em Novo para criar o primeiro item do catálogo.</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="products-table-wrap">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Status</th>
+                            <th class="products-table__actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in products)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="products-table__title">
+                                        <strong>@product.Name</strong>
+                                        <span class="muted">@product.Description</span>
+                                    </div>
+                                </td>
+                                <td>@product.Category</td>
+                                <td>@FormatCurrency(product.Price)</td>
+                                <td>
+                                    <span class="status-pill @(product.IsActive ? "status-pill--success" : "status-pill--muted")">@(product.IsActive ? "Ativo" : "Inativo")</span>
+                                </td>
+                                <td>
+                                    <div class="stack-actions stack-actions--compact">
+                                        <button class="secondary-button" type="button" @onclick="() => EditProduct(product)">Editar</button>
+                                        <button class="secondary-button" type="button" @onclick="() => ToggleStatusAsync(product)">@(product.IsActive ? "Desativar" : "Ativar")</button>
+                                        <button class="danger-button" type="button" @onclick="() => DeleteAsync(product)">Excluir</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (totalPages > 1)
+            {
+                <div class="pagination-bar">
+                    <div class="pagination-bar__start">
+                        <label class="field--inline">
+                            <span class="muted">Itens por página:</span>
+                            <select class="input" value="@pageSize" @onchange="OnPageSizeChanged">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="pagination-bar__center">
+                        <button class="secondary-button" type="button" @onclick="PreviousPageAsync" disabled="@(!CanGoPrevious || isLoading)">Anterior</button>
+                        <div class="pagination-bar__pages">
+                            @for (var pageNumber = 1; pageNumber <= totalPages; pageNumber++)
+                            {
+                                var pageIndex = pageNumber;
+
+                                <button class="pagination-button @(pageIndex == currentPage ? "pagination-button--active" : string.Empty)" type="button" @onclick="() => GoToPageAsync(pageIndex)" disabled="@(pageIndex == currentPage || isLoading)">
+                                    @pageIndex
+                                </button>
+                            }
+                        </div>
+                        <button class="secondary-button" type="button" @onclick="NextPageAsync" disabled="@(!CanGoNext || isLoading)">Próxima</button>
+                    </div>
+
+                    <div class="pagination-bar__end">
+                        <span class="status-pill status-pill--muted">Total de Itens: @totalItems</span>
+                    </div>
+                </div>
+            }
+        }
+    </article>
+
+    <aside class="products-drawer @(isEditorOpen ? "products-drawer--open" : string.Empty)">
+        <button class="drawer-backdrop" type="button" aria-label="Fechar editor" @onclick="CloseEditor"></button>
+
+        <article class="page-card products-editor-card">
+            <div class="drawer-header">
+                <div>
+                    <p class="eyebrow">Cadastro</p>
+                    <h2>@(editingProductId is null ? "Novo produto" : "Editar produto")</h2>
+                </div>
+
+                <button class="secondary-button drawer-close" type="button" @onclick="CloseEditor">Fechar</button>
+            </div>
+
+            @if (!string.IsNullOrWhiteSpace(errorMessage))
+            {
+                <div class="inline-alert inline-alert--error" style="margin-bottom: 1.5rem;">@errorMessage</div>
+            }
+
+            <div class="form-grid form-grid--drawer">
+                <label class="field field--full">
+                    <span>Nome</span>
+                    <input class="input" @bind="editor.Name" />
+                </label>
+                <label class="field field--full">
+                    <span>Descrição</span>
+                    <textarea class="input" rows="4" @bind="editor.Description"></textarea>
+                </label>
+                <label class="field">
+                    <span>Preço</span>
+                    <input class="input" type="number" step="0.01" min="0" @bind="editor.Price" />
+                </label>
+                <label class="field">
+                    <span>Categoria</span>
+                    <select class="input" @bind="editor.Category">
+                        <option value="Sanduíches">Sanduíches</option>
+                        <option value="Batatas">Batatas</option>
+                        <option value="Refrigerantes">Refrigerantes</option>
+                    </select>
+                </label>
+                <label class="field field--inline field--full">
+                    <input type="checkbox" @bind="editor.IsActive" />
+                    <span>Ativo</span>
+                </label>
+            </div>
+
+            <div class="stack-actions">
+                <button class="primary-button" type="button" @onclick="SaveAsync" disabled="@isSaving">Salvar</button>
+            </div>
+
+            @if (isSaving)
+            {
+                <p class="muted">Salvando produto...</p>
+            }
+        </article>
+    </aside>
+</section>
+
+@code {
+    private const int DefaultPageSize = 10;
+
+    private readonly List<ProductResponseDto> products = [];
+    private readonly ProductEditor editor = new();
+    private long? editingProductId;
+    private bool isEditorOpen;
+    private string? errorMessage;
+    private string? actionMessage;
+    private bool isLoading = true;
+    private bool isSaving;
+    private int currentPage = 1;
+    private int pageSize = DefaultPageSize;
+    private int totalPages = 1;
+    private long totalItems;
+
+    private string ExportUrl => BuildExportUrl();
+
+    private bool CanGoPrevious => currentPage > 1;
+
+    private bool CanGoNext => currentPage < totalPages;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPageAsync(1);
+    }
+
+    private async Task ReloadAsync()
+    {
+        await LoadPageAsync(currentPage);
+    }
+
+    private async Task LoadPageAsync(int page)
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        var requestedPage = Math.Max(1, page);
+        var result = await ApiClient.GetProductsAsync(requestedPage, pageSize);
+
+        if (result.IsSuccess && result.Value is not null)
+        {
+            products.Clear();
+            products.AddRange(result.Value.Items);
+            currentPage = result.Value.Page;
+            pageSize = result.Value.PageSize > 0 ? result.Value.PageSize : pageSize;
+            totalPages = Math.Max(1, result.Value.TotalPages);
+            totalItems = result.Value.Total;
+
+            if (currentPage > totalPages)
+            {
+                isLoading = false;
+                await LoadPageAsync(totalPages);
+                return;
+            }
+        }
+        else
+        {
+            errorMessage = result.ErrorMessage ?? "Não foi possível carregar os produtos.";
+        }
+
+        isLoading = false;
+    }
+
+    private async Task OnPageSizeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var size))
+        {
+            pageSize = size;
+            await LoadPageAsync(1);
+        }
+    }
+
+    private async Task GoToPageAsync(int page)
+    {
+        if (page == currentPage || page < 1 || page > totalPages)
+        {
+            return;
+        }
+
+        await LoadPageAsync(page);
+    }
+
+    private async Task PreviousPageAsync()
+    {
+        if (CanGoPrevious)
+        {
+            await LoadPageAsync(currentPage - 1);
+        }
+    }
+
+    private async Task NextPageAsync()
+    {
+        if (CanGoNext)
+        {
+            await LoadPageAsync(currentPage + 1);
+        }
+    }
+
+    private async Task SaveAsync()
+    {
+        actionMessage = null;
+        errorMessage = null;
+        isSaving = true;
+
+        if (editingProductId is null)
+        {
+            var createResult = await ApiClient.CreateProductAsync(editor.ToCreateRequest());
+
+            if (createResult.IsSuccess && createResult.Value is not null)
+            {
+                actionMessage = $"Produto {createResult.Value.Name} criado com sucesso.";
+                ResetEditor();
+                CloseEditor();
+                await ReloadAsync();
+            }
+            else
+            {
+                errorMessage = createResult.ErrorMessage ?? "Não foi possível criar o produto.";
+            }
+        }
+        else
+        {
+            var updateResult = await ApiClient.UpdateProductAsync(editingProductId.Value, editor.ToUpdateRequest());
+
+            if (updateResult.IsSuccess)
+            {
+                actionMessage = "Produto atualizado com sucesso.";
+                ResetEditor();
+                CloseEditor();
+                await ReloadAsync();
+            }
+            else
+            {
+                errorMessage = updateResult.ErrorMessage ?? "Não foi possível atualizar o produto.";
+            }
+        }
+
+        isSaving = false;
+    }
+
+    private void EditProduct(ProductResponseDto product)
+    {
+        editingProductId = product.Id;
+        isEditorOpen = true;
+        editor.Name = product.Name;
+        editor.Description = product.Description ?? string.Empty;
+        editor.Price = product.Price;
+        editor.Category = product.Category;
+        editor.IsActive = product.IsActive;
+        actionMessage = null;
+        errorMessage = null;
+    }
+
+    private void OpenNewProduct()
+    {
+        ResetEditor();
+        isEditorOpen = true;
+        actionMessage = null;
+        errorMessage = null;
+    }
+
+    private void CloseEditor()
+    {
+        isEditorOpen = false;
+    }
+
+    private async Task ToggleStatusAsync(ProductResponseDto product)
+    {
+        var result = await ApiClient.UpdateProductStatusAsync(product.Id, new UpdateProductStatusRequest { IsActive = !product.IsActive });
+
+        if (result.IsSuccess)
+        {
+            await ReloadAsync();
+        }
+        else
+        {
+            errorMessage = result.ErrorMessage ?? "Não foi possível alterar o status do produto.";
+        }
+    }
+
+    private async Task DeleteAsync(ProductResponseDto product)
+    {
+        var confirmed = await JS.InvokeAsync<bool>("confirm", $"Tem certeza que deseja excluir o produto '{product.Name}'?");
+        if (!confirmed) return;
+
+        var result = await ApiClient.DeleteProductAsync(product.Id);
+
+        if (result.IsSuccess)
+        {
+            if (editingProductId == product.Id)
+            {
+                ResetEditor();
+            }
+
+            await ReloadAsync();
+        }
+        else
+        {
+            errorMessage = result.ErrorMessage ?? "Não foi possível excluir o produto.";
+        }
+    }
+
+    private void ResetEditor()
+    {
+        editingProductId = null;
+        editor.Reset();
+    }
+
+    private string BuildExportUrl()
+    {
+        var baseUrl = ApiSettings.Value.BaseUrl;
+
+        if (!Uri.TryCreate(baseUrl, UriKind.Absolute, out var baseUri))
+        {
+            baseUri = new Uri("https://localhost:3060/", UriKind.Absolute);
+        }
+
+        return new Uri(baseUri, "api/v1/Product/ExportToExcel").ToString();
+    }
+
+    private static string FormatCurrency(decimal value)
+        => value.ToString("C", CultureInfo.GetCultureInfo("pt-BR"));
+
+    private sealed class ProductEditor
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal Price { get; set; } = 0m;
+        public string Category { get; set; } = "Sanduíches";
+        public bool IsActive { get; set; } = true;
+
+        public void Reset()
+        {
+            Name = string.Empty;
+            Description = string.Empty;
+            Price = 0m;
+            Category = "Sanduíches";
+            IsActive = true;
+        }
+
+        public CreateProductRequest ToCreateRequest() => new()
+        {
+            Name = Name,
+            Description = string.IsNullOrWhiteSpace(Description) ? null : Description,
+            Price = Price,
+            Category = Category,
+            IsActive = IsActive
+        };
+
+        public UpdateProductRequest ToUpdateRequest() => new()
+        {
+            Name = Name,
+            Description = string.IsNullOrWhiteSpace(Description) ? null : Description,
+            Price = Price,
+            Category = Category,
+            IsActive = IsActive
+        };
+    }
+}

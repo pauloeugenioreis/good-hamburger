@@ -1,0 +1,114 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>GoodHamburger.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Core Infrastructure -->
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="Scrutor" Version="7.0.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+
+    <!-- Swagger/API Documentation -->
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+    <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.1" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
+
+    <!-- Health Checks -->
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
+    <!-- Uncomment health checks as needed -->
+    <!-- <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="9.0.0" /> -->
+    <!-- <PackageReference Include="AspNetCore.HealthChecks.Oracle" Version="9.0.0" /> -->
+    <!-- <PackageReference Include="AspNetCore.HealthChecks.Npgsql" Version="9.0.0" /> -->
+    <!-- <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="9.0.0" /> -->
+    <!-- <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" /> -->
+    <!-- <PackageReference Include="AspNetCore.HealthChecks.RabbitMQ" Version="9.0.0" /> -->
+
+    <!-- Caching -->
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.5" />
+    <!-- Microsoft.Extensions.Caching.Memory REMOVED - Already included in Microsoft.AspNetCore.App framework -->
+
+    <!-- InMemory Database -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.5" />
+
+    <!-- ORM Support (Uncomment as needed) -->
+    <!-- Linq2Db - Required when using Linq2Db ORM -->
+    <!-- <PackageReference Include="linq2db.AspNet" Version="5.4.1" /> -->
+
+    <!-- Rate Limiting -->
+    <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
+
+    <!-- Job Scheduling (Commented - uncomment to enable) -->
+    <PackageReference Include="Quartz" Version="3.18.0" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.18.0" />
+
+    <!-- Message Queue (Commented - uncomment to enable) -->
+    <PackageReference Include="RabbitMQ.Client" Version="7.2.1" />
+
+    <!-- Cloud Storage -->
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.14.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.27.0" />
+    <PackageReference Include="Azure.Identity" Version="1.21.0" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.21.1" />
+
+    <!-- NoSQL Databases (Commented - uncomment to enable) -->
+    <PackageReference Include="MongoDB.Driver" Version="3.7.1" />
+
+    <!-- Observability (OpenTelemetry) -->
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.15.2" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.2" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.15.2" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.15.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.10" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.15.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.15.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.15.1" />
+
+    <!-- Telemetry Exporters -->
+    <!-- OpenTelemetry.Exporter.Jaeger REMOVED - Deprecated/Legacy -->
+    <!-- Use OpenTelemetry.Exporter.OpenTelemetryProtocol instead (already included above) -->
+    <PackageReference Include="OpenTelemetry.Exporter.Zipkin" Version="1.15.2" />
+    <!-- Using latest available version (1.14.0-beta.1 - no stable version yet) -->
+    <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.14.0-beta.1" />
+    <PackageReference Include="Azure.Monitor.OpenTelemetry.Exporter" Version="1.7.0" />
+
+    <!-- Event Sourcing -->
+    <PackageReference Include="Marten" Version="8.29.3" />
+    <PackageReference Include="Marten.AspNetCore" Version="8.29.3" />
+    <PackageReference Include="Npgsql" Version="10.0.2" />
+
+    <!-- Authentication -->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.5" />
+
+    <!-- Resilience -->
+    <PackageReference Include="Polly" Version="8.6.6" />
+
+    <!-- Security Headers -->
+    <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
+
+    <!-- Logging (Commented - uncomment to enable) -->
+    <PackageReference Include="Google.Cloud.Logging.Console" Version="1.6.0" />
+    <!-- <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" /> -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.201" />
+    <PackageReference Update="SonarAnalyzer.CSharp" Version="10.23.0.137933" />
+  </ItemGroup>
+
+</Project>

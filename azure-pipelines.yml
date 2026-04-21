@@ -1,0 +1,254 @@
+trigger:
+  branches:
+    include:
+    - main
+    - develop
+  paths:
+    exclude:
+    - docs/**
+    - README.md
+
+pr:
+  branches:
+    include:
+    - main
+    - develop
+
+variables:
+  dotnetVersion: '10.0.x'
+  buildConfiguration: 'Release'
+  solutionFile: 'GoodHamburger.sln'
+  vmImageName: 'ubuntu-latest'
+  dockerImageName: 'GoodHamburger-api'
+
+stages:
+- stage: Build
+  displayName: 'Build and Test'
+  jobs:
+  - job: BuildAndTest
+    displayName: 'Build and Run Tests'
+    pool:
+      vmImage: $(vmImageName)
+
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET SDK'
+      inputs:
+        version: $(dotnetVersion)
+        packageType: sdk
+
+    - task: NodeTool@0
+      displayName: 'Install Node.js'
+      inputs:
+        versionSpec: '20.x'
+
+    - script: |
+        npx --yes markdownlint-cli@0.41.0 "**/*.md" --ignore "**/node_modules/**" --ignore "**/bin/**" --ignore "**/obj/**"
+      displayName: 'Run markdownlint'
+
+    - task: Cache@2
+      displayName: 'Cache NuGet packages'
+      inputs:
+        key: 'nuget | "$(Agent.OS)" | **/packages.lock.json,!**/bin/**,!**/obj/**'
+        restoreKeys: |
+          nuget | "$(Agent.OS)"
+        path: $(NUGET_PACKAGES)
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore NuGet packages'
+      inputs:
+        command: 'restore'
+        projects: '$(solutionFile)'
+        feedsToUse: 'select'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build solution'
+      inputs:
+        command: 'build'
+        projects: '$(solutionFile)'
+        arguments: '--configuration $(buildConfiguration) --no-restore'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Run Unit Tests'
+      inputs:
+        command: 'test'
+        projects: 'tests/UnitTests/UnitTests.csproj'
+        arguments: '--configuration $(buildConfiguration) --no-build --logger trx --collect:"XPlat Code Coverage"'
+        publishTestResults: true
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Run Integration Tests'
+      inputs:
+        command: 'test'
+        projects: 'tests/Integration/Integration.csproj'
+        arguments: '--configuration $(buildConfiguration) --no-build --logger trx --collect:"XPlat Code Coverage"'
+        publishTestResults: true
+
+    - task: PublishCodeCoverageResults@2
+      displayName: 'Publish Code Coverage'
+      inputs:
+        summaryFileLocation: '$(Agent.TempDirectory)/**/*.cobertura.xml'
+        codeCoverageTool: 'Cobertura'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Publish API'
+      inputs:
+        command: 'publish'
+        publishWebProjects: false
+        projects: 'src/Api/Api.csproj'
+        arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/api --no-build'
+        zipAfterPublish: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Upload Build Artifacts'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+
+- stage: CodeQuality
+  displayName: 'Code Quality Analysis'
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - job: SecurityScan
+    displayName: 'Security Vulnerability Scan'
+    pool:
+      vmImage: $(vmImageName)
+
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET SDK'
+      inputs:
+        version: $(dotnetVersion)
+        packageType: sdk
+
+    - script: |
+        dotnet list package --vulnerable --include-transitive
+      displayName: 'Check for vulnerable packages'
+      continueOnError: true
+
+    - script: |
+        dotnet tool install --global dotnet-outdated-tool
+        dotnet outdated
+      displayName: 'Check for outdated packages'
+      continueOnError: true
+
+  - job: SonarCloud
+    displayName: 'SonarCloud Analysis'
+    pool:
+      vmImage: $(vmImageName)
+
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET SDK'
+      inputs:
+        version: $(dotnetVersion)
+        packageType: sdk
+
+    - task: SonarCloudPrepare@2
+      displayName: 'Prepare SonarCloud Analysis'
+      inputs:
+        SonarCloud: 'SonarCloudConnection'
+        organization: 'pauloeugenioreis'
+        scannerMode: 'MSBuild'
+        projectKey: 'pauloeugenioreis_dotnet-enterprise-template-10'
+        projectName: '.NET 10 Enterprise Template'
+        extraProperties: |
+          sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/**/coverage.opencover.xml
+          sonar.exclusions=**/obj/**,**/bin/**,**/wwwroot/**,**/node_modules/**,**/Migrations/**
+          sonar.coverage.exclusions=**/Program.cs,**/Startup.cs,**/Migrations/**,**/Seeders/**,**/*Extensions.cs
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build solution'
+      inputs:
+        command: 'build'
+        projects: '$(solutionFile)'
+        arguments: '--configuration $(buildConfiguration)'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Run tests with coverage'
+      inputs:
+        command: 'test'
+        projects: '$(solutionFile)'
+        arguments: '--configuration $(buildConfiguration) --no-build --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover'
+        publishTestResults: true
+
+    - task: SonarCloudAnalyze@2
+      displayName: 'Run SonarCloud Analysis'
+
+    - task: SonarCloudPublish@2
+      displayName: 'Publish SonarCloud Results'
+      inputs:
+        pollingTimeoutSec: '300'
+
+- stage: Docker
+  displayName: 'Docker Build and Push'
+  dependsOn: Build
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  jobs:
+  - job: DockerBuild
+    displayName: 'Build and Push Docker Image'
+    pool:
+      vmImage: $(vmImageName)
+
+    steps:
+    - task: Docker@2
+      displayName: 'Login to Docker Hub'
+      inputs:
+        command: login
+        containerRegistry: 'DockerHubConnection'
+
+    - task: Docker@2
+      displayName: 'Build Docker Image'
+      inputs:
+        command: build
+        repository: $(dockerImageName)
+        dockerfile: 'Dockerfile'
+        tags: |
+          $(Build.BuildNumber)
+          latest
+        arguments: '--build-arg BUILD_CONFIGURATION=$(buildConfiguration)'
+
+    - task: Docker@2
+      displayName: 'Push Docker Image'
+      condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+      inputs:
+        command: push
+        repository: $(dockerImageName)
+        tags: |
+          $(Build.BuildNumber)
+          latest
+
+    - script: |
+        docker images
+      displayName: 'List Docker images'
+
+- stage: Deploy
+  displayName: 'Deploy to Environment'
+  dependsOn:
+  - Build
+  - Docker
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  jobs:
+  - deployment: DeployToStaging
+    displayName: 'Deploy to Staging'
+    environment: 'staging'
+    pool:
+      vmImage: $(vmImageName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: drop
+
+          - script: |
+              echo "Deploying to staging environment..."
+              echo "Artifact location: $(Pipeline.Workspace)/drop"
+            displayName: 'Deploy API to Staging'
+
+          - script: |
+              echo "Running smoke tests..."
+              # Add smoke test commands here
+            displayName: 'Run Smoke Tests'

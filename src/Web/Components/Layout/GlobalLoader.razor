@@ -1,0 +1,24 @@
+@implements IDisposable
+@inject LoadingState LoadingState
+
+@if (LoadingState.IsLoading)
+{
+    <div class="global-loader"></div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        LoadingState.OnLoadingChanged += HandleLoadingChanged;
+    }
+
+    private void HandleLoadingChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        LoadingState.OnLoadingChanged -= HandleLoadingChanged;
+    }
+}

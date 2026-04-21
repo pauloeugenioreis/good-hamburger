@@ -1,0 +1,31 @@
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: project-template-devcontainer
+    volumes:
+      - ..:/workspace:cached
+      - devcontainer-nuget:/home/vscode/.nuget/packages
+      - devcontainer-https:/home/vscode/.aspnet/https
+    command: sleep infinity
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+    user: vscode
+    depends_on:
+      - sqlserver
+      - postgres
+      - postgres-events
+      - mysql
+      - oracle
+      - jaeger
+      - prometheus
+      - grafana
+    networks:
+      - app-network
+
+volumes:
+  devcontainer-nuget:
+  devcontainer-https:
