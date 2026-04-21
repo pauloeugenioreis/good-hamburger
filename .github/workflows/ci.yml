@@ -10,7 +10,7 @@ on:
 env:
   DOTNET_VERSION: '10.0.x'
   SOLUTION_FILE: 'GoodHamburger.sln'
-  DOCKER_IMAGE: 'GoodHamburger-api'
+  DOCKER_IMAGE: 'goodhamburger-api'
 
 jobs:
   build-and-test:
@@ -22,35 +22,40 @@ jobs:
       pull-requests: write
 
     services:
-      mongo:
-        image: mongo:7
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
         env:
-          MONGO_INITDB_ROOT_USERNAME: admin
-          MONGO_INITDB_ROOT_PASSWORD: admin
-          MONGO_INITDB_DATABASE: GoodHamburger
+          ACCEPT_EULA: Y
+          SA_PASSWORD: YourStrong@Passw0rd
+          MSSQL_PID: Developer
         ports:
-          - 27017:27017
+          - 1433:1433
         options: >-
-          --health-cmd "mongosh --quiet --username admin --password admin --authenticationDatabase admin --eval 'db.adminCommand({ ping: 1 })'"
+          --health-cmd "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P YourStrong@Passw0rd -C -Q 'SELECT 1' || exit 1"
           --health-interval 10s
           --health-timeout 5s
-          --health-retries 12
-          --health-start-period 20s
+          --health-retries 10
+          --health-start-period 30s
+
+      postgres-events:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: GoodHamburgerEvents
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
     - name: 🔔 Checkout code
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Shallow clones disabled for better analysis
-
-    - name: ⚙️ Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-
-    - name: 📝 Run markdownlint
-      run: |
-        npx --yes markdownlint-cli@0.41.0 "**/*.md" --ignore "**/node_modules/**" --ignore "**/bin/**" --ignore "**/obj/**"
+        fetch-depth: 0
 
     - name: 🔧 Setup .NET
       uses: actions/setup-dotnet@v4
@@ -75,6 +80,10 @@ jobs:
       run: dotnet test tests/UnitTests/UnitTests.csproj --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=unit-test-results.trx"
 
     - name: 🧪 Run Integration Tests
+      env:
+        AppSettings__Infrastructure__Database__ConnectionString: "Server=localhost,1433;Database=GoodHamburger;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;"
+        AppSettings__Infrastructure__EventSourcing__ConnectionString: "Host=localhost;Database=GoodHamburgerEvents;Username=postgres;Password=postgres"
+        ASPNETCORE_ENVIRONMENT: Testing
       run: dotnet test tests/Integration/Integration.csproj --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=integration-test-results.trx"
 
     - name: 📊 Publish Test Results
@@ -85,7 +94,7 @@ jobs:
         path: '**/*.trx'
         reporter: dotnet-trx
 
-    - name: 📦 Publish Artifacts
+    - name: 📦 Publish API Artifacts
       if: success() && github.ref == 'refs/heads/main'
       run: dotnet publish src/Api/Api.csproj --configuration Release --output ./publish --no-build
 
@@ -118,7 +127,7 @@ jobs:
 
     - name: 📊 Run Tests with Coverage
       run: |
-        dotnet test ${{ env.SOLUTION_FILE }} \
+        dotnet test tests/UnitTests/UnitTests.csproj \
           --configuration Release \
           --collect:"XPlat Code Coverage" \
           --results-directory ./coverage \
@@ -161,13 +170,23 @@ jobs:
     #     username: ${{ secrets.DOCKER_USERNAME }}
     #     password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: 🏗️ Build Docker Image
+    - name: 🏗️ Build API Docker Image
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Dockerfile
-        push: false  # Apenas build, sem publicar
+        file: ./Dockerfile.api
+        push: false
         tags: ${{ env.DOCKER_IMAGE }}:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: 🏗️ Build Web Docker Image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.web
+        push: false
+        tags: goodhamburger-web:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
@@ -184,6 +203,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: 📥 Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_FILE }}
 
     - name: 🔍 Run Security Scan
       run: |
@@ -211,7 +233,7 @@ jobs:
     - name: 🔔 Checkout code
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Shallow clones disabled for better analysis
+        fetch-depth: 0
 
     - name: 🔧 Setup .NET
       uses: actions/setup-dotnet@v4
@@ -247,7 +269,7 @@ jobs:
       shell: bash
       run: |
         ./.sonar/scanner/dotnet-sonarscanner begin \
-          /k:"pauloeugenioreis_dotnet-enterprise-template-10" \
+          /k:"pauloeugenioreis_good-hamburger" \
           /o:"pauloeugenioreis" \
           /d:sonar.token="${SONAR_TOKEN}" \
           /d:sonar.host.url="https://sonarcloud.io" \
@@ -255,7 +277,7 @@ jobs:
 
         dotnet build ${{ env.SOLUTION_FILE }} --configuration Release
 
-        dotnet test ${{ env.SOLUTION_FILE }} \
+        dotnet test tests/UnitTests/UnitTests.csproj \
           --configuration Release \
           --no-build \
           --collect:"XPlat Code Coverage" \
