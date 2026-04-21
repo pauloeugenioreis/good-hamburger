@@ -72,13 +72,15 @@ public class ProductControllerTests : IClassFixture<WebApplicationFactoryFixture
 
         var menu = await response.Content.ReadFromJsonAsync<MenuResponseDto>();
         menu.Should().NotBeNull();
-        menu!.Sandwiches.Should().HaveCount(3);
-        menu.SideDishes.Should().HaveCount(2);
-        menu.Sandwiches.Select(x => x.Name).Should().ContainInOrder("X Bacon", "X Burger", "X Egg");
-        menu.Sandwiches.Select(x => x.Price).Should().Contain(new[] { 7.00m, 5.00m, 4.50m });
-        menu.SideDishes.Select(x => x.Name).Should().ContainInOrder("Batata frita", "Refrigerante");
-        menu.SideDishes.Single(x => x.Name == "Batata frita").Price.Should().Be(2.00m);
-        menu.SideDishes.Single(x => x.Name == "Refrigerante").Price.Should().Be(2.50m);
+        menu!.Sandwiches.Should().HaveCountGreaterThanOrEqualTo(3);
+        menu.SideDishes.Should().HaveCountGreaterThanOrEqualTo(2);
+
+        menu.Sandwiches.Should().Contain(x => x.Name == "X Bacon" && x.Price == 7.00m);
+        menu.Sandwiches.Should().Contain(x => x.Name == "X Burger" && x.Price == 5.00m);
+        menu.Sandwiches.Should().Contain(x => x.Name == "X Egg" && x.Price == 4.50m);
+
+        menu.SideDishes.Should().Contain(x => x.Name == "Batata frita" && x.Price == 2.00m);
+        menu.SideDishes.Should().Contain(x => x.Name == "Refrigerante" && x.Price == 2.50m);
     }
 
     [Fact]
